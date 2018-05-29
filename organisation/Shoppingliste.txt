@@ -1,0 +1,10 @@
+Kapazitives Touch-Display (~ 7")
+Lautsprecher (2x)
+Keyboard (25 Tasten)
+Kapazitive Sensoren (30 Stück)
+Erweiterungsmodul für mehr Pins am Pi
+Massagesessel
+
+
+
+ggf. Materialien für Lasercutter
