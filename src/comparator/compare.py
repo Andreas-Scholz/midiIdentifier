@@ -1,6 +1,6 @@
 import difflib
 
-def do_match (input, archive):
+def compare (input, archive):
     matches = dict()
     for key, value in archive.items():
         ratio = difflib.SequenceMatcher(None, input, value).ratio()
