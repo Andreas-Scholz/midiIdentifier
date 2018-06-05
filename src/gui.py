@@ -83,7 +83,7 @@ class Choose(tk.Frame):
         rowc+=1
 
         for key, value in controller.songs.items():
-            song_button = tk.Button(self, text=value, bg="#FFFFFF", width=30, command=lambda key=key:self.choose(controller,key,value))
+            song_button = tk.Button(self, text=value, bg="#FFFFFF", width=30, command=lambda key=key,value=value:self.choose(controller,key,value))
             song_button.grid(row=rowc, column=0, padx=10, pady=3)
             rowc+=1
 
