@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import font  as tkfont
+from tkinter import font as tkfont
+
 
 class MidiIdentifier(tk.Tk):
 
@@ -27,7 +28,8 @@ class MidiIdentifier(tk.Tk):
             # will be the one that is visible.
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.change_frame("Listening", {})
+        # this is the startup frame
+        self.change_frame("Choose", {})
 
     def change_frame(self, page_name, params):
         '''Show a frame for the given page name'''
@@ -36,7 +38,8 @@ class MidiIdentifier(tk.Tk):
         frame.tkraise()
 
     # Variables accessible by all frames
-    songs = {1:'Britney Spears - I\'m fat', 2:'Melania Trump - Help', 3:'Donald Trump - Grab \'em by the pussy', 4:'Bon Jovi - Still not dead', 5:'Karsten Schick - A man with no prejudices'}
+    songs = {1: 'Britney Spears - I\'m fat', 2: 'Melania Trump - Help', 3: 'Donald Trump - Grab \'em by the pussy',
+             4: 'Bon Jovi - Still not dead', 5: 'Karsten Schick - A man with no prejudices'}
     chosen_song = False
 
 
@@ -49,11 +52,12 @@ class Listening(tk.Frame):
         label.grid(row=0, column=0, padx=10, pady=3)
 
         button = tk.Button(self, text="Processing -->",
-                            command=lambda: controller.change_frame("Processing",{}))
+                           command=lambda: controller.change_frame("Processing", {}))
         button.grid(row=1, column=0, padx=10, pady=3)
 
     def load(self, params):
         return 1
+
 
 class Processing(tk.Frame):
 
@@ -63,10 +67,10 @@ class Processing(tk.Frame):
         label = tk.Label(self, text="Processing-Tab", font=controller.title_font)
         label.grid(row=0, column=0, padx=10, pady=3)
         button = tk.Button(self, text="<-- Reset",
-                           command=lambda: controller.change_frame("Listening",{}))
+                           command=lambda: controller.change_frame("Listening", {}))
         button.grid(row=1, column=0, padx=10, pady=3)
         button2 = tk.Button(self, text="Choose -->",
-                           command=lambda: controller.change_frame("Choose",{}))
+                            command=lambda: controller.change_frame("Choose", {}))
         button2.grid(row=1, column=2, padx=10, pady=3)
 
     def load(self, params):
@@ -80,23 +84,25 @@ class Choose(tk.Frame):
         rowc = 0
         label = tk.Label(self, text="Welchen Song meintest du?", font=controller.title_font)
         label.grid(row=rowc, column=0, padx=10, pady=3)
-        rowc+=1
+        rowc += 1
 
         for key, value in controller.songs.items():
-            song_button = tk.Button(self, text=value, bg="#FFFFFF", width=30, command=lambda key=key,value=value:self.choose(controller,key,value))
+            song_button = tk.Button(self, text=value, bg="#FFFFFF", width=30,
+                                    command=lambda key=key, value=value: self.choose(controller, key, value))
             song_button.grid(row=rowc, column=0, padx=10, pady=3)
-            rowc+=1
+            rowc += 1
 
         button = tk.Button(self, text="<-- Reset",
                            command=lambda: controller.change_frame("Listening", {}))
-        button.grid(row=rowc+1, column=0, padx=10, pady=3)
+        button.grid(row=rowc + 1, column=0, padx=10, pady=3)
 
     def load(self, params):
         return 1
 
-    def choose(self,controller,id,name):
+    def choose(self, controller, id, name):
         chosen_song = id
-        controller.change_frame("Playing",{'chosen_song_id':id,'chosen_song_name':name})
+        controller.change_frame("Playing", {'chosen_song_id': id, 'chosen_song_name': name})
+
 
 class Playing(tk.Frame):
 
@@ -110,7 +116,7 @@ class Playing(tk.Frame):
         self.chosen_song.grid(row=1, column=0, padx=10, pady=3)
 
         button = tk.Button(self, text="<-- Reset",
-                           command=lambda: controller.change_frame("Listening",{}))
+                           command=lambda: controller.change_frame("Listening", {}))
         button.grid(row=2, column=0, padx=10, pady=3)
 
     def load(self, params):
