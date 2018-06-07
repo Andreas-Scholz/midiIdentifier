@@ -18,5 +18,6 @@ def list_output_devices():
     p = pyaudio.PyAudio()
     output_devices_available = dict()
     for i in range(p.get_device_count()):
+        if p.get_device_info_by_index(i)["maxOutputChannels"] > 0:  # output device
             output_devices_available[p.get_device_info_by_index(i)["name"]] = i
     return output_devices_available

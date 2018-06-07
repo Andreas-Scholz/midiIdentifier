@@ -28,7 +28,9 @@ class Piano(object):
     def _run_piano(self, thread_name, inp, out):
         while True:
             if inp.poll():
-                out.write(inp.read(100))
+                data = inp.read(100)
+                out.write(data)
+                print(data)
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
 
