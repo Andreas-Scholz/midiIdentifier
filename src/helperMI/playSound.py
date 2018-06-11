@@ -1,4 +1,18 @@
 import time
+from telnetlib import Telnet
+
+
+# fluid = Telnet("pi","9988")
+fluid = Telnet("192.168.0.21","9988")
+fluid.write("noteon 0 64 127\n".encode('ascii'))
+time.sleep(7)
+fluid.write("noteoff 0 64 127\n".encode('ascii'))
+
+
+
+
+
+"""
 import pygame.midi
 import pyaudio
 
@@ -7,10 +21,10 @@ pygame.midi.init()
 def list_midi_input_devices():
     input_devices_available = dict()
     for x in range(0, pygame.midi.get_count()):
-        """
+        ""
         returns information about a midi device
         get_device_info(an_id) -> (interf, name, input, output, opened)
-        """
+        ""
         if pygame.midi.get_device_info(x)[2] == 1: #input device
             input_devices_available[pygame.midi.get_device_info(x)[1].decode("utf-8")] = x
     return input_devices_available
@@ -45,3 +59,5 @@ player.note_off(64, 127)
 print("Note off")
 del player
 pygame.midi.quit()
+"""
+

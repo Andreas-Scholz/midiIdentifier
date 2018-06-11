@@ -2,11 +2,15 @@ import _thread
 import time
 import pygame, pygame.midi
 from audioMI import devices
+from telnetlib import Telnet
 
 # set up pygame
 pygame.mixer.pre_init(44100, -16, 2, 2048)
 pygame.init()
 pygame.midi.init()
+
+# set up fluidsynth
+fluid = Telnet("192.168.0.21","9988")
 
 
 class Piano(object):
@@ -29,6 +33,7 @@ class Piano(object):
         while True:
             if inp.poll():
                 data = inp.read(100)
+                fluid.write("noteon 0 64 127\n".encode('ascii'))
                 out.write(data)
                 print(data)
             # wait a short while to prevent 100% cpu utilization
