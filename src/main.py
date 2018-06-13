@@ -5,6 +5,7 @@ import midiToText
 import operator
 import time
 from mido import MidiFile
+from midiSourceMI.piano import Piano
 
 from compare import compare
 
@@ -21,12 +22,27 @@ def get_midi_as_text(file):
         .decode("utf-8").replace('\n', ' ')
     return hex_representation
 
+
+def convert(msg):
+    if msg.type == 'note_on':
+        return "n" + str(msg.note)
+    else:
+        return ""
+
+
 def main():
+
+    midi = ""
 
     midi_file = MidiFile(MIDI_DIR + MIDI_FILE5)
     for msg in midi_file:
         if not msg.is_meta and not str(msg).startswith("program_change") and not str(msg).startswith("control_change"):
-            print(msg)
+            midi += convert(msg)
+
+    piano = Piano(1,2)
+    piano.play_midi(midi)
+
+    print(midi)
 
     # start_time = time.time()
     # single_midi_as_text = get_midi_as_text(MIDI_FILE5)
