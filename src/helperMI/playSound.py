@@ -39,21 +39,27 @@ def list_output_devices():
             output_devices_available[p.get_device_info_by_index(i)["name"]] = i
     return output_devices_available
 
+
 print(list_output_devices())
+midi_devices = pygame.midi.get_count()
+for device in range(0,midi_devices):
+    print(str(pygame.midi.get_device_info(device)))
 player = pygame.midi.Output(int(input("Choose audio device: ")))
 player.set_instrument(0)
 print("Note on")
-player.note_on(64, 127)
+# player.note_on(64, 127)
+player.write([[[0xc0,0,0],20000],[[0x90,60,100],20500]])
 time.sleep(3)
 player.note_off(64, 127)
 print("Note off")
 print("Note on")
-player.note_on(64, 127)
+player.write_short(0x90,65,100)
+# player.note_on(64, 127)
 time.sleep(3)
 player.note_off(64, 127)
 print("Note off")
 print("Note on")
-player.note_on(64, 127)
+player.note_on(64, 127,1)
 time.sleep(3)
 player.note_off(64, 127)
 print("Note off")

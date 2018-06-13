@@ -11,7 +11,10 @@ pygame.midi.init()
 
 # set up fluidsynth
 fluid = Telnet("192.168.0.21","9988")
+# fluid = Telnet("pi","9988")
 
+KEY_DOWN = 144
+KEY_UP = 128
 
 class Piano(object):
 
@@ -33,9 +36,14 @@ class Piano(object):
         while True:
             if inp.poll():
                 data = inp.read(100)
-                fluid.write("noteon 0 64 127\n".encode('ascii'))
-                out.write(data)
-                print(data)
+                for sound in data: # more than one key can be pressed aat one time
+                    key_data = sound[0] # ignore timestamp
+                    key_value = str(key_data[1]) # the specific key that has been pressed
+                    if(key_data[0] == KEY_DOWN):
+                        fluid.write(("noteon 0 " + key_value + " 127\n").encode('ascii'))
+                    if(key_data[0] == KEY_UP):
+                        fluid.write(("noteoff 0 " + key_value + " 127\n").encode('ascii'))
+                # print(data)
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
 
