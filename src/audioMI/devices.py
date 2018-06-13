@@ -1,8 +1,9 @@
 import pygame
 import pyaudio
-
+import pygame.midi
 
 def list_midi_input_devices():
+    pygame.midi.init()
     input_devices_available = dict()
     for x in range(0, pygame.midi.get_count()):
         """
