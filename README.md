@@ -15,15 +15,12 @@ Und anschließend folgende Zeile einfügen:
 @reboot /usr/bin/screen -dm /usr/bin/fluidsynth -a alsa -m alsa_seq -i -s -o "shell.port=9988" -g 2 /home/pi/workspace/soundfonts/FluidR3_GM.sf2
 ```
 
-
 ## 2. Mit Skript auf fluidsynth zugreifen
 ```python
 from telnetlib import Telnet
 fluid = Telnet("localhost","9988")
 fluid.write("noteon 0 64 127\n".encode('ascii'))
 ```
-
-
 
 ## 3. RPi set-up
 - Install a clean raspberry os image
@@ -33,4 +30,13 @@ fluid.write("noteon 0 64 127\n".encode('ascii'))
 - sudo apt-get install telnet
 - sudo apt-get install screen
 - sudo apt-get install git
-
+- enable autostart of fluidsynrh as described above
+- clone midiIdentifier repository
+- add the repo to the pythonpath. Edit ~/.bashrc and add the following lines:
+```
+PYTHONPATH="${PYTHONPATH}:/home/pi/workspace/midiIdentifier/src"
+export PYTHONPATH
+```
+- reload the .bashrc file with ```. ~/.bashrc```
+- Install pyaudio ```sudo apt-get install python3-pyaudio ```
+- You are good to go!
