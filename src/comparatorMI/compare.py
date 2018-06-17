@@ -11,7 +11,7 @@ def compare(inp, archive):
         ratio = difflib.SequenceMatcher(None, inp, value).ratio()
         matches[key] = "%.2f" % round(ratio * 100, 2)
         count += 1
-    return sorted(matches.items(), key=operator.itemgetter(1), reverse=True)
+    return matches
 
 
 def levenshtein(inp, archive):
@@ -37,7 +37,7 @@ def levenshtein(inp, archive):
                 v0[j] = v1[j]
 
         matches[key] = v1[len(value)]
-    return sorted(matches.items(), key=operator.itemgetter(1), reverse=True)
+    return matches
 
 
 def main():
@@ -50,7 +50,8 @@ def main():
     self_played["Für Elise (too low): "] = "n57n56n57n56n57n52n55n53n50n48"
 
     library = {}
-    library["alle_meine_entchen--heilpaedagogik-info-de.mp3.mid: "] = "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
+    library[
+        "alle_meine_entchen--heilpaedagogik-info-de.mp3.mid: "] = "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
     library["Alle_Meine_Entchen.mid: "] = "n48n50n52n53n55n55n57n57n57n57n55n57n57n57n57n55n53n53n53n53"
     library["for_elise_by_beethoven.mid: "] = "n76n75n76n75n76n71n74n72n69n45n52n57n60n64n69n71n40n52n56n64"
     library["for_elise_by_beethoven_shortened.mid: "] = "n76n75n76n75n76n71n74n72"
@@ -58,7 +59,8 @@ def main():
 
     for song in self_played.keys():
         # matches = compare(self_played[song], library)
-        sorted_matches = levenshtein(self_played[song], library)[:3]
+        matches = levenshtein(self_played[song], library)
+        sorted_matches = sorted(matches.items(), key=operator.itemgetter(1), reverse=True)[:20]
         print(song)
         print(sorted_matches)
 
