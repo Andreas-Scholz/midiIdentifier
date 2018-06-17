@@ -95,7 +95,7 @@ class Piano(object):
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
         self.isDone = True
-        data = self.inp.read(1000) # fetch one more time to clear the pipe for the next listening process
+        self.inp.poll() # fetch one more time to clear the pipe for the next listening process
 
 def main():
     # list all midi devices
