@@ -21,6 +21,9 @@ class Piano(object):
     progress = 0
     isDone = False
     midi = ""
+    midi_file_to_play = ""
+    is_playing = False
+    is_pausing = False
 
     def __init__(self, input_device_id, output_device_id, instrument_id=0):
         self.inp = pygame.midi.Input(input_device_id)
@@ -54,6 +57,24 @@ class Piano(object):
     def get_progress(self):
         return self.progress
 
+    def play_midi_file(self, midi_file):
+        if not self.is_playing and not self.is_pausing:
+            pygame.mixer.music.load(midi_file)
+            pygame.mixer.music.play()
+            self.is_playing = True
+
+    def pause_midi_file(self):
+        if self.is_playing:
+            pygame.mixer.music.pause()
+            self.is_playing = False
+            self.is_pausing = True
+
+    def unpause_midi_file(self):
+        if self.is_pausing:
+            pygame.mixer.music.unpause()
+            self.is_playing = True
+            self.is_pausing = False
+
     def get_midi(self):
         return self.midi
 
@@ -74,7 +95,7 @@ class Piano(object):
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
         self.isDone = True
-
+        data = self.inp.read(1000) # fetch one more time to clear the pipe for the next listening process
 
 def main():
     # list all midi devices
