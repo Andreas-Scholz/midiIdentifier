@@ -14,8 +14,12 @@ class Gui(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
 
-        self.title_font = tkfont.Font(family='Helvetica', size=18, weight="bold", slant="italic")
+        self.title_font = tkfont.Font(family='Helvetica', size=24, weight="bold", slant="italic")
         self.bg = "SlateGray3"
+        self.main_font = tkfont.Font(family='Helvetica', size=18, weight='bold')
+        self.pady = 10
+        self.button_width = 40
+        self.button_height = 1
 
         container = tk.Frame(self,background=self.bg)
         container.pack(side="top", fill="both", expand=True)
@@ -28,7 +32,7 @@ class Gui(tk.Tk):
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
             frame.configure(background=self.bg)
-            frame.grid(row=0, column=0, sticky="")
+            frame.grid(row=0, column=0, sticky="n")
 
         self.change_frame("Canvas", {})
         self.change_frame("Choose_input", {})
@@ -48,6 +52,6 @@ if __name__ == "__main__":
     app = Gui()
     #app.style = ttk.Style()
     #app.style.theme_use("clam")
-    app.attributes('-fullscreen', True)
-    print(app.tk.call('ttk::themes'))
+    app.geometry("1024x600")
+    #app.attributes('-fullscreen', True)
     app.mainloop()
