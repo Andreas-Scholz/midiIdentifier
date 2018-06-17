@@ -35,5 +35,6 @@ class Listening(Frame):
             print("Progress: {}%".format(piano.get_progress()))
             self.status['text'] = "Progress: {}%".format(piano.get_progress())
             self.update()
+        pianoThread.join()
         self.status['text'] = "Done"
         self.update()
