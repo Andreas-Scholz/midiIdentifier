@@ -1,0 +1,6 @@
+Alle meine Entchen (falsch):  n60n62n64n65n67n67n65n69n69n69
+Alle meine Entchen (richtig): n60n62n64n65n67n67n69n69n69n69
+Alle meine Entchen (länger):  n60n62n64n65n67n67n69n69n69n69n67n69n69n69n69n67n65
+Für Elise (last note Wrong):  n64n63n64n63n64n59n62n60n57n48
+Für Elise (too high):  n71n70n71n70n71n65n69n67n64n60
+Für Elise (too low):   n57n56n57n56n57n52n55n53n50n48
