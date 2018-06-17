@@ -23,4 +23,5 @@ class Choose_input(Frame):
         return 1
 
     def choose(self, controller, id, name):
-        controller.change_frame("Choose_output",{'chosen_input':id})
+        controller.input = id
+        controller.change_frame("Choose_output",{})
