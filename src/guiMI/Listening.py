@@ -20,7 +20,7 @@ class Listening(Frame):
         return 1
 
     def afterLoad(self, controller, params):
-        piano = Piano(controller.input, controller.output)
+        piano = Piano(controller.input)
 
         pianoThread = threading.Thread(target=piano.listen)
         # progressThread = threading.Thread(target=print_progress)

@@ -21,32 +21,60 @@ class Gui(tk.Tk):
         self.button_width = 40
         self.button_height = 1
 
-        container = tk.Frame(self,background=self.bg)
-        container.pack(side="top", fill="both", expand=True)
-        container.grid_rowconfigure(0, weight=1)
-        container.grid_columnconfigure(0, weight=1)
+        self.container = tk.Frame(self,background=self.bg)
+        self.container.pack(side="top", fill="both", expand=True)
+        self.container.grid_rowconfigure(0, weight=1)
+        self.container.grid_columnconfigure(0, weight=1)
+
+        self.input = None
+        self.output = None
 
         self.frames = {}
-        for F in (Listening, Processing, Choose, Playing, Choose_input, Choose_output, Canvas):
-            page_name = F.__name__
-            frame = F(parent=container, controller=self)
-            self.frames[page_name] = frame
-            frame.configure(background=self.bg)
-            frame.grid(row=0, column=0, sticky="n")
+        #for F in (Listening, Processing, Choose, Playing, Choose_input, Choose_output, Canvas):
+        #    page_name = F.__name__
+        #    frame = F(parent=self.container, controller=self)
+        #    self.frames[page_name] = frame
+        #    frame.configure(background=self.bg)
+        #    frame.grid(row=0, column=0, sticky="n")
 
-        self.change_frame("Canvas", {})
-        self.change_frame("Choose_input", {})
+        #self.change_frame("Canvas", {})
+        #self.change_frame("Choose_input", {})
+        self.current_frame = Canvas(parent=self.container, controller=self)
+        self.current_frame.configure(background=self.bg)
+        self.current_frame.grid(row=0, column=0, sticky="n")
+        self.change_frame('Choose_input', {})
 
-    def change_frame(self, page_name, params):
-        '''Show a frame for the given page name'''
-        frame = self.frames[page_name]
-        canv = self.frames["Canvas"]
-        frame.load(params)
-        canv.tkraise()
-        frame.tkraise()
-        self.update()
-        frame.afterLoad(params)
+    #def change_frame(self, page_name, params):
+    #    '''Show a frame for the given page name'''
+    #    frame = self.frames[page_name]
+    #    canv = self.frames["Canvas"]
+    #    frame.load(self, params)
+    #    canv.tkraise()
+    #    frame.tkraise()
+    #    self.update()
+    #    frame.afterLoad(self, params)
 
+    def change_frame(self, type, params):
+        if(type == 'Choose'):
+            type_loaded = Choose
+        if(type == 'Choose_input'):
+            type_loaded = Choose_input
+        if(type == 'Choose_output'):
+            type_loaded = Choose_output
+        if(type == 'Listening'):
+            type_loaded = Listening
+        if(type == 'Playing'):
+            type_loaded = Playing
+        if(type == 'Processing'):
+            type_loaded = Processing
+        self.current_frame.grid_forget()
+        self.current_frame.destroy()
+        self.current_frame = type_loaded(parent=self.container, controller=self, params=params)
+        self.current_frame.configure(background=self.bg)
+        self.current_frame.grid(row=0, column=0, sticky="n")
+        self.current_frame.tkraise()
+        self.current_frame.load(self, params)
+        self.current_frame.afterLoad(self, params)
 
 if __name__ == "__main__":
     app = Gui()

@@ -24,4 +24,4 @@ class Choose_input(Frame):
 
     def choose(self, controller, id, name):
         controller.input = id
-        controller.change_frame("Choose_output",{})
+        controller.change_frame("Listening",{})
