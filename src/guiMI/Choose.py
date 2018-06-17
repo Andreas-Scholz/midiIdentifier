@@ -1,5 +1,5 @@
 from tkinter import *
-import compare
+from comparatorMI import compare
 
 class Choose(Frame):
     def __init__(self, parent, controller, params):
