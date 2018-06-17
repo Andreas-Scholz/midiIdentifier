@@ -6,11 +6,11 @@ class Processing(Frame):
         Frame.__init__(self, parent)
         self.controller = controller
         label = Label(self, text="Processing-Tab", font=controller.title_font, background=controller.bg)
-        label.grid(row=0, column=0, padx=10, pady=3)
-        button = Button(self, text="<-- Reset",
+        label.grid(row=0, column=0, padx=10, pady=30)
+        button = Button(self, text="<-- Reset", width=int(controller.button_width/2), height=controller.button_height, font=controller.main_font,
                            command=lambda: controller.change_frame("Listening", {}))
         button.grid(row=1, column=0, padx=10, pady=3)
-        button2 = Button(self, text="Choose -->",
+        button2 = Button(self, text="Choose -->", width=int(controller.button_width/2), height=controller.button_height, font=controller.main_font,
                             command=lambda: controller.change_frame("Choose", {}))
         button2.grid(row=1, column=2, padx=10, pady=3)
 
