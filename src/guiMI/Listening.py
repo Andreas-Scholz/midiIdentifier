@@ -2,7 +2,6 @@ from tkinter import *
 import threading
 import time
 from midiSourceMI.piano import Piano
-import compare
 
 class Listening(Frame):
 
