@@ -32,14 +32,15 @@ def convert(msg):
 
 def main():
 
-    midi = ""
+    midi = "n60n62n64n65n67n67n69n69n69n69n67n69n69n69n69n67n65"
 
-    midi_file = MidiFile(MIDI_DIR + MIDI_FILE5)
-    for msg in midi_file:
-        if not msg.is_meta and not str(msg).startswith("program_change") and not str(msg).startswith("control_change"):
-            midi += convert(msg)
+    # midi_file = MidiFile(MIDI_DIR + MIDI_FILE5)
+    # for msg in midi_file:
+    #     if not msg.is_meta and not str(msg).startswith("program_change") and not str(msg).startswith("control_change"):
+    #         midi += convert(msg)
 
-    piano = Piano(1,2)
+    # piano = Piano(1,2)
+    piano = Piano.without_devices()
     piano.play_midi(midi)
 
     print(midi)

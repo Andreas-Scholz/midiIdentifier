@@ -5,7 +5,7 @@ from telnetlib import Telnet
 # fluid = Telnet("pi","9988")
 fluid = Telnet("192.168.0.21","9988")
 fluid.write("noteon 0 64 127\n".encode('ascii'))
-time.sleep(7)
+time.sleep(3)
 fluid.write("noteoff 0 64 127\n".encode('ascii'))
 
 

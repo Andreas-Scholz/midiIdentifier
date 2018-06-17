@@ -28,6 +28,18 @@ class Piano(object):
         self.set_instrument(instrument_id)
         self._reset_all()
 
+    @classmethod
+    def without_devices(cls):
+        return cls
+
+    @classmethod
+    def play_midi(cls, midi, speed=250):
+        notes = midi.split('n')
+        for note in notes:
+            fluid.write(("noteon 0 " + str(note) + " 127\n").encode('ascii'))
+            pygame.time.wait(speed)
+            # fluid.write(("noteoff 0 " + str(note) + " 127\n").encode('ascii'))
+
     def _reset_all(self):
         self.progress = 0
         self.isDone = False
@@ -63,11 +75,6 @@ class Piano(object):
             pygame.time.wait(100)
         self.isDone = True
 
-    def play_midi(self, midi):
-        notes = midi.split('n')
-        for note in notes:
-            fluid.write(("noteon 0 " + str(note) + " 127\n").encode('ascii'))
-            pygame.time.wait(500)
 
 def main():
     # list all midi devices
