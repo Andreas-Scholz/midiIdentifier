@@ -2,7 +2,7 @@ from tkinter import *
 from audioMI import devices
 
 class Choose_output(Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller , params):
         Frame.__init__(self, parent)
         self.controller = controller
         rowc = 0
@@ -16,11 +16,11 @@ class Choose_output(Frame):
             song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
             rowc += 1
 
-    def load(self, params):
+    def load(self, controller, params):
         self.params = params
         return 1
 
-    def afterLoad(self, params):
+    def afterLoad(self, controller, params):
         return 1
 
     def choose(self, controller, id, name):

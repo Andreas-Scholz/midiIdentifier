@@ -1,5 +1,14 @@
 import difflib
 import operator
+import json
+
+def getArchive():
+    with open('../../files/songs.json') as json_data:
+        archive = json.load(json_data)
+    smallArchive = {}
+    for song in archive:
+        smallArchive[song['name']] = song['short_midi']
+    return smallArchive
 
 def compare(input, archive):
     matches = dict()

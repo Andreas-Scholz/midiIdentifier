@@ -2,10 +2,11 @@ from tkinter import *
 import threading
 import time
 from midiSourceMI.piano import Piano
+import compare
 
 class Listening(Frame):
 
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, params):
         Frame.__init__(self, parent)
         self.controller = controller
 
@@ -15,14 +16,10 @@ class Listening(Frame):
         self.status = Label(self, text="", font=controller.main_font)
         self.status.grid(row=1, column=0, padx=10, pady=controller.pady)
 
-        button = Button(self, text="Processing -->", width=controller.button_width, height=controller.button_height, font=controller.main_font,
-                           command=lambda: controller.change_frame("Processing", {}))
-        button.grid(row=2, column=0, padx=10, pady=controller.pady)
-
-    def load(self, params):
+    def load(self, controller, params):
         return 1
 
-    def afterLoad(self, params):
+    def afterLoad(self, controller, params):
         piano = Piano(params['chosen_input'], params['chosen_output'])
 
         pianoThread = threading.Thread(target=piano.listen)
@@ -38,3 +35,4 @@ class Listening(Frame):
         pianoThread.join()
         self.status['text'] = "Done"
         self.update()
+        controller.change_frame("Choose", {'midi':piano.get_midi()})

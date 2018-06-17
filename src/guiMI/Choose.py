@@ -1,7 +1,8 @@
 from tkinter import *
+import compare
 
 class Choose(Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, params):
         Frame.__init__(self, parent)
         self.controller = controller
         rowc = 0
@@ -9,12 +10,11 @@ class Choose(Frame):
         label.grid(row=rowc, column=0, padx=10, pady=30)
         rowc += 1
 
-        # Variables accessible by all frames
-        songs = {1: 'Britney Spears - I\'m fat', 2: 'Melania Trump - Help', 3: 'Donald Trump - Grab \'em by the pussy',
-                 4: 'Bon Jovi - Still not dead', 5: 'Karsten Schick - A man with no prejudices'}
+        archive = compare.getArchive()
+        matches = compare.compare(params['midi'], archive)
 
-        for key, value in songs.items():
-            song_button = Button(self, text=value, width=controller.button_width, height=controller.button_height, font=controller.main_font,
+        for value, key in matches.items():
+            song_button = Button(self, text=value+' ('+key+')', width=controller.button_width, height=controller.button_height, font=controller.main_font,
                                     command=lambda key=key, value=value: self.choose(controller, key, value))
             song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
             rowc += 1
@@ -23,10 +23,10 @@ class Choose(Frame):
                            command=lambda: controller.change_frame("Listening", {}))
         button.grid(row=rowc + 1, column=0, padx=10, pady=3)
 
-    def load(self, params):
+    def load(self, controller, params):
         return 1
 
-    def afterLoad(self, params):
+    def afterLoad(self, controller, params):
         return 1
 
     def choose(self, controller, id, name):

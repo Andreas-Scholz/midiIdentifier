@@ -10,10 +10,10 @@ class Canvas(Frame):
         canv.create_rectangle(0, 0, 1024, 600, fill=controller.bg)
         canv.grid(row=0, column=0, sticky="")
 
-    def load(self, params):
+    def load(self, controller, params):
         return 1
 
-    def afterLoad(self, params):
+    def afterLoad(self, controller, params):
         return 1
 
     def choose(self, controller, id, name):

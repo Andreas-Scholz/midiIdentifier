@@ -2,7 +2,7 @@ from tkinter import *
 
 class Playing(Frame):
 
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, params):
         Frame.__init__(self, parent)
         self.controller = controller
         label = Label(self, text="Playing Song...", font=controller.title_font, background=controller.bg)
@@ -15,8 +15,8 @@ class Playing(Frame):
                            command=lambda: controller.change_frame("Listening", {}))
         button.grid(row=2, column=0, padx=10, pady=controller.pady)
 
-    def load(self, params):
+    def load(self, controller, params):
         self.chosen_song['text'] = params['chosen_song_name']
 
-    def afterLoad(self, params):
+    def afterLoad(self, controller, params):
         return 1
