@@ -24,10 +24,8 @@ class Piano(object):
     isDone = False
     midi = ""
 
-    def __init__(self, input_device_id, output_device_id, instrument_id=0):
+    def __init__(self, input_device_id):
         self.inp = pygame.midi.Input(input_device_id)
-        self.out = pygame.midi.Output(output_device_id, latency=0, buffer_size=4096)
-        self.set_instrument(instrument_id)
         self._reset_all()
 
     @classmethod
@@ -47,9 +45,6 @@ class Piano(object):
         self.isDone = False
         self.midi = ""
 
-    def set_instrument(self, instrument_id=0):
-        self.out.set_instrument(instrument_id)
-
     def is_done(self):
         return self.isDone
 
@@ -61,7 +56,7 @@ class Piano(object):
 
     def listen(self):
         self._reset_all()
-        while self.progress <100:
+        while self.progress < 100:
             if self.inp.poll():
                 data = self.inp.read(100)
                 for sound in data: # more than one key can be pressed at one time
@@ -84,24 +79,9 @@ def main():
     print(devices.list_midi_input_devices())
     inp = int(input("Choose a midi input device: "))
 
-    # list all audio devices
-    print("Audio output devices")
-    print(devices.list_output_devices())
-    out = int(input("Choose an audio output device: "))
-
     print("Creating piano")
-    piano = Piano(inp, out)
+    piano = Piano(inp)
 
-    print("Playing...")
-    piano.play_midi_file("../../files/midi/for_elise_by_beethoven.mid")
-    time.sleep(2)
-    print("Pausing...")
-    piano.pause_midi_file()
-    print("Pausing...")
-    time.sleep(2)
-    piano.unpause_midi_file()
-
-    '''
     # piano.setActive()
     print("Creating threads")
     pianoThread = threading.Thread(target=piano.listen)
@@ -118,7 +98,7 @@ def main():
 
     pianoThread.join()
     print("Finished. Midi file: \"" + piano.get_midi() + "\"")
-    '''
+
 
     print("GUI thread continuing some other stuff...")
     for i in range (1,10):
