@@ -10,14 +10,14 @@ class Listening(Frame):
         self.controller = controller
 
         label = Label(self, text="Listening-Tab", font=controller.title_font, background=controller.bg)
-        label.grid(row=0, column=0, padx=10, pady=3)
+        label.grid(row=0, column=0, padx=10, pady=30)
 
-        self.status = Label(self, text="")
-        self.status.grid(row=1, column=0, padx=10, pady=3)
+        self.status = Label(self, text="", font=controller.main_font)
+        self.status.grid(row=1, column=0, padx=10, pady=controller.pady)
 
-        button = Button(self, text="Processing -->",
+        button = Button(self, text="Processing -->", width=controller.button_width, height=controller.button_height, font=controller.main_font,
                            command=lambda: controller.change_frame("Processing", {}))
-        button.grid(row=2, column=0, padx=10, pady=3)
+        button.grid(row=2, column=0, padx=10, pady=controller.pady)
 
     def load(self, params):
         return 1

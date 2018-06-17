@@ -8,13 +8,14 @@ class Choose_input(Frame):
         self.controller = controller
         rowc = 0
         label = Label(self, text="Input-Device wählen", font=controller.title_font, background=controller.bg)
-        label.grid(row=rowc, column=0, padx=10, pady=3)
+        label.grid(row=rowc, column=0, padx=10, pady=30)
         rowc += 1
 
-        for value, key in devices.list_midi_input_devices().items():
-            song_button = Button(self, text=value, width=30,
+        #for value, key in devices.list_midi_input_devices().items():
+        for value, key in {'LPK25':1,'Irgendwas':2}.items():
+            song_button = Button(self, text=value, width=controller.button_width, height=controller.button_height, font=controller.main_font,
                                     command=lambda key=key, value=value: self.choose(controller, key, value))
-            song_button.grid(row=rowc, column=0, padx=10, pady=3)
+            song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
             rowc += 1
 
     def load(self, params):

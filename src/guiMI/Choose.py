@@ -6,7 +6,7 @@ class Choose(Frame):
         self.controller = controller
         rowc = 0
         label = Label(self, text="Welchen Song meintest du?", font=controller.title_font, background=controller.bg)
-        label.grid(row=rowc, column=0, padx=10, pady=3)
+        label.grid(row=rowc, column=0, padx=10, pady=30)
         rowc += 1
 
         # Variables accessible by all frames
@@ -14,9 +14,9 @@ class Choose(Frame):
                  4: 'Bon Jovi - Still not dead', 5: 'Karsten Schick - A man with no prejudices'}
 
         for key, value in songs.items():
-            song_button = Button(self, text=value, width=30,
+            song_button = Button(self, text=value, width=controller.button_width, height=controller.button_height, font=controller.main_font,
                                     command=lambda key=key, value=value: self.choose(controller, key, value))
-            song_button.grid(row=rowc, column=0, padx=10, pady=3)
+            song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
             rowc += 1
 
         button = Button(self, text="<-- Reset",
