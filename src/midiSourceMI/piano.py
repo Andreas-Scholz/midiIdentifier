@@ -10,8 +10,10 @@ pygame.init()
 pygame.midi.init()
 
 # set up fluidsynth
-#fluid = Telnet("192.168.0.21","9988")
-fluid = Telnet("localhost","9988")
+# fluid = Telnet("192.168.0.21","9988")
+# fluid = Telnet("localhost","9988") # for usage on raspberry pi
+# fluid = Telnet("pi","9988")
+fluid = Telnet("192.168.0.21","9988")
 
 KEY_DOWN = 144
 KEY_UP = 128
@@ -21,9 +23,6 @@ class Piano(object):
     progress = 0
     isDone = False
     midi = ""
-    midi_file_to_play = ""
-    is_playing = False
-    is_pausing = False
 
     def __init__(self, input_device_id, output_device_id, instrument_id=0):
         self.inp = pygame.midi.Input(input_device_id)
@@ -57,24 +56,6 @@ class Piano(object):
     def get_progress(self):
         return self.progress
 
-    def play_midi_file(self, midi_file):
-        if not self.is_playing and not self.is_pausing:
-            pygame.mixer.music.load(midi_file)
-            pygame.mixer.music.play()
-            self.is_playing = True
-
-    def pause_midi_file(self):
-        if self.is_playing:
-            pygame.mixer.music.pause()
-            self.is_playing = False
-            self.is_pausing = True
-
-    def unpause_midi_file(self):
-        if self.is_pausing:
-            pygame.mixer.music.unpause()
-            self.is_playing = True
-            self.is_pausing = False
-
     def get_midi(self):
         return self.midi
 
@@ -95,9 +76,9 @@ class Piano(object):
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
         self.isDone = True
-        self.inp.poll() # fetch one more time to clear the pipe for the next listening process
 
 def main():
+
     # list all midi devices
     print("Midi input devices")
     print(devices.list_midi_input_devices())
@@ -111,6 +92,16 @@ def main():
     print("Creating piano")
     piano = Piano(inp, out)
 
+    print("Playing...")
+    piano.play_midi_file("../../files/midi/for_elise_by_beethoven.mid")
+    time.sleep(2)
+    print("Pausing...")
+    piano.pause_midi_file()
+    print("Pausing...")
+    time.sleep(2)
+    piano.unpause_midi_file()
+
+    '''
     # piano.setActive()
     print("Creating threads")
     pianoThread = threading.Thread(target=piano.listen)
@@ -127,6 +118,7 @@ def main():
 
     pianoThread.join()
     print("Finished. Midi file: \"" + piano.get_midi() + "\"")
+    '''
 
     print("GUI thread continuing some other stuff...")
     for i in range (1,10):

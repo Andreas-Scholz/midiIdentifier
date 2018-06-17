@@ -1,41 +1,44 @@
 import difflib
 import operator
 
-def compare(input, archive):
+
+def compare(inp, archive):
     matches = dict()
     count = 1
     for key, value in archive.items():
         if count % 100 == 0:
             print(count)
-        ratio = difflib.SequenceMatcher(None, input, value).ratio()
+        ratio = difflib.SequenceMatcher(None, inp, value).ratio()
         matches[key] = "%.2f" % round(ratio * 100, 2)
         count += 1
-    return matches
+    return sorted(matches.items(), key=operator.itemgetter(1), reverse=True)
 
-def levenshtein(input, archive):
+
+def levenshtein(inp, archive):
     ''' From Wikipedia article; Iterative with two matrix rows. '''
     matches = dict()
     for key, value in archive.items():
-        if input == value:
+        if inp == value:
             return 0
-        elif len(input) == 0:
+        elif len(inp) == 0:
             return len(value)
         elif len(value) == 0:
-            return len(input)
+            return len(inp)
         v0 = [None] * (len(value) + 1)
         v1 = [None] * (len(value) + 1)
         for i in range(len(v0)):
             v0[i] = i
-        for i in range(len(input)):
+        for i in range(len(inp)):
             v1[0] = i + 1
             for j in range(len(value)):
-                cost = 0 if input[i] == value[j] else 1
+                cost = 0 if inp[i] == value[j] else 1
                 v1[j + 1] = min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost)
             for j in range(len(v0)):
                 v0[j] = v1[j]
 
         matches[key] = v1[len(value)]
-    return matches
+    return sorted(matches.items(), key=operator.itemgetter(1), reverse=True)
+
 
 def main():
     self_played = {}
@@ -55,10 +58,10 @@ def main():
 
     for song in self_played.keys():
         # matches = compare(self_played[song], library)
-        matches = levenshtein(self_played[song], library)
-        sorted_matches = sorted(matches.items(), key=operator.itemgetter(1), reverse=True)[:20]
+        sorted_matches = levenshtein(self_played[song], library)[:3]
         print(song)
         print(sorted_matches)
+
 
 if __name__ == "__main__":
     main()
