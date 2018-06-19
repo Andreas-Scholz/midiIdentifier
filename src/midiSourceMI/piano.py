@@ -10,8 +10,8 @@ pygame.init()
 pygame.midi.init()
 
 # set up fluidsynth
-#fluid = Telnet("192.168.0.21","9988")
-fluid = Telnet("localhost","9988") # for usage on raspberry pi
+fluid = Telnet("192.168.0.21","9988")
+#fluid = Telnet("localhost","9988") # for usage on raspberry pi
 #fluid = Telnet("pi","9988")
 
 KEY_DOWN = 144

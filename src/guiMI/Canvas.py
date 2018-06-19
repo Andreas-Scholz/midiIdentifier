@@ -1,6 +1,5 @@
 from tkinter import *
 import tkinter as tk
-from audioMI import devices
 
 class Canvas(Frame):
     def __init__(self, parent, controller):

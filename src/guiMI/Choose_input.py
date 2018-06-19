@@ -1,5 +1,4 @@
 from tkinter import *
-import tkinter as tk
 from audioMI import devices
 
 class Choose_input(Frame):
