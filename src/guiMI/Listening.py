@@ -35,5 +35,5 @@ class Listening(Frame):
         self.status['text'] = "Done"
         self.update()
         midi = piano.get_midi()
-        #del piano
+        del piano
         controller.change_frame("Choose", {'midi':midi})
