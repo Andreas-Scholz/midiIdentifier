@@ -44,7 +44,7 @@ class Piano(object):
         self.isDone = False
         self.midi = ""
         while self.inp.poll():
-            self.inp.read(100)
+            self.inp.read(1)
 
     def is_done(self):
         return self.isDone
