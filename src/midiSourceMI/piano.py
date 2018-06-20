@@ -71,6 +71,7 @@ class Piano(object):
             pygame.time.wait(100)
         fluid.write("reset\n".encode('ascii'))
         fluid.write("quit\n".encode('ascii'))
+        self.inp.close()
         self.isDone = True
 
 def main():
