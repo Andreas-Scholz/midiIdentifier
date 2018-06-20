@@ -59,18 +59,19 @@ class Piano(object):
             if self.inp.poll():
                 data = self.inp.read(100)
                 for sound in data: # more than one key can be pressed at one time
-                    key_data = sound[0] # ignore timestamp
-                    key_value = str(key_data[1]) # the specific key that has been pressed
-                    if(key_data[0] == KEY_DOWN):
-                        fluid.write(("noteon 0 " + key_value + " 127\n").encode('ascii'))
-                        self.midi += ("n" + key_value)
-                    if(key_data[0] == KEY_UP):
-                        fluid.write(("noteoff 0 " + key_value + " 127\n").encode('ascii'))
-                    self.progress += 5
+                    if self.progress < 100:
+                        key_data = sound[0] # ignore timestamp
+                        key_value = str(key_data[1]) # the specific key that has been pressed
+                        if(key_data[0] == KEY_DOWN):
+                            fluid.write(("noteon 0 " + key_value + " 127\n").encode('ascii'))
+                            self.midi += ("n" + key_value)
+                        if(key_data[0] == KEY_UP):
+                            fluid.write(("noteoff 0 " + key_value + " 127\n").encode('ascii'))
+                        self.progress += 5
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
-        fluid.write("reset\n".encode('ascii'))
-        fluid.write("quite\n".encode('ascii'))
+        #fluid.write("reset\n".encode('ascii'))
+        #fluid.write("quit\n".encode('ascii'))
         self.isDone = True
 
 def main():
