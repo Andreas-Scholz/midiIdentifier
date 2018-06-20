@@ -26,6 +26,7 @@ class Piano(object):
     def __init__(self, input_device_id):
         self.inp = pygame.midi.Input(input_device_id)
         self._reset_all()
+        print("CONSTR!!!!!!")
 
     @classmethod
     def without_devices(cls):
@@ -56,6 +57,7 @@ class Piano(object):
         return self.midi
 
     def listen(self):
+        print("LISTEN!!!!")
         self._reset_all()
         while self.progress < 100:
             if self.inp.poll():
