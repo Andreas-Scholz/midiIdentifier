@@ -40,3 +40,17 @@ export PYTHONPATH
 - reload the .bashrc file with ```. ~/.bashrc```
 - Install pyaudio ```sudo apt-get install python3-pyaudio ```
 - You are good to go!
+
+## 4. Display setup
+Open /boot/config.txt
+- Enter / Change in File:
+
+---------
+# ATTENTION: NO SPACES BETWEEN "="!!!
+max_usb_current=1
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt 1024 600 60 6 0 0 0
+hdmi_drive=1
+---------
+

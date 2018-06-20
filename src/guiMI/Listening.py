@@ -2,7 +2,6 @@ from tkinter import *
 import threading
 import time
 from midiSourceMI.piano import Piano
-import compare
 
 class Listening(Frame):
 
@@ -35,4 +34,6 @@ class Listening(Frame):
         pianoThread.join()
         self.status['text'] = "Done"
         self.update()
-        controller.change_frame("Choose", {'midi':piano.get_midi()})
+        midi = piano.get_midi()
+        del piano
+        controller.change_frame("Choose", {'midi':midi})

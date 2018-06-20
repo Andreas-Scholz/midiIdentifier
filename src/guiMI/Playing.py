@@ -1,5 +1,5 @@
 from tkinter import *
-from audioMI.MidiPlayer import MidiPlayer
+from audioMI.MidiPlayer2 import MidiPlayer2
 
 class Playing(Frame):
 
@@ -7,7 +7,7 @@ class Playing(Frame):
         Frame.__init__(self, parent)
         self.controller = controller
 
-        self.player = MidiPlayer()
+        self.player = MidiPlayer2()
 
         label = Label(self, text="Playing Song...", font=controller.title_font, background=controller.bg)
         label.grid(row=0, column=0, padx=10, pady=30)
@@ -21,8 +21,7 @@ class Playing(Frame):
 
     def load(self, controller, params):
         self.chosen_song['text'] = params['chosen_song_name']
-        self.player.load("../../files/midi/"+params['chosen_song_name'])
-        self.player.play()
+        self.player.play("../../files/midi/"+params['chosen_song_name'])
 
     def afterLoad(self, controller, params):
         return 1

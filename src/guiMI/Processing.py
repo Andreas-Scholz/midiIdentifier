@@ -1,5 +1,5 @@
 from tkinter import *
-import compare
+from comparatorMI import compare
 
 class Processing(Frame):
 

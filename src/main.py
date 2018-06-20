@@ -7,7 +7,7 @@ import time
 from mido import MidiFile
 from midiSourceMI.piano import Piano
 
-from compare import compare
+from compare from comparatorMI import compare
 
 MIDI_DIR = "./../files/midi/"
 MIDI_FILE = "Alle_Meine_Entchen.mid"
