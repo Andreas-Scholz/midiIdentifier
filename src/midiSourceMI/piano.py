@@ -44,7 +44,7 @@ class Piano(object):
         self.isDone = False
         self.midi = ""
         while self.inp.poll():
-            self.inp.read(1)
+            self.inp.read(100)
 
     def is_done(self):
         return self.isDone
@@ -71,7 +71,6 @@ class Piano(object):
                     self.progress += 5
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
-        self.inp.close()
         self.isDone = True
 
 def main():
