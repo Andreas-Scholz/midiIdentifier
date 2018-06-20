@@ -21,7 +21,7 @@ class Playing(Frame):
 
     def load(self, controller, params):
         self.chosen_song['text'] = params['chosen_song_name']
-        #self.player.play("../../files/midi/"+params['chosen_song_name'])
+        self.player.play("../../files/midi/"+params['chosen_song_name'])
 
     def afterLoad(self, controller, params):
         return 1

@@ -43,6 +43,7 @@ class Piano(object):
         self.progress = 0
         self.isDone = False
         self.midi = ""
+        pygame.time.wait(100)
         while self.inp.poll():
             self.inp.read(1)
 
