@@ -6,7 +6,7 @@ class MidiPlayer2():
 
     def __init__(self):
         self.p = None
-        self.fluid = Telnet("192.168.0.21","9988")
+        self.fluid = Telnet("localhost","9988")
 
     def play(self, file):
         self.p = subprocess.Popen(["aplaymidi", "-p128:0", file])
