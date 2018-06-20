@@ -13,8 +13,8 @@ class MidiPlayer2():
 
     def stop(self):
         self.p.terminate()
-        self.fluid.write("reset")
-        self.fluid.write("quit")
+        self.fluid.write("reset".encode('ascii'))
+        self.fluid.write("quit".encode('ascii'))
 
 def main():
     player = MidiPlayer2()
