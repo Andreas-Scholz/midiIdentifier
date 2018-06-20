@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import font as tkfont
-from tkinter import ttk
 from guiMI.Canvas import Canvas
 from guiMI.Listening import Listening
 from guiMI.Processing import Processing
@@ -81,5 +80,5 @@ if __name__ == "__main__":
     #app.style = ttk.Style()
     #app.style.theme_use("clam")
     app.geometry("1024x600")
-    #app.attributes('-fullscreen', True)
+    app.attributes('-fullscreen', True)
     app.mainloop()
