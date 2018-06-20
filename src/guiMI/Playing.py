@@ -21,11 +21,11 @@ class Playing(Frame):
 
     def load(self, controller, params):
         self.chosen_song['text'] = params['chosen_song_name']
-        self.player.play("../../files/midi/"+params['chosen_song_name'])
+        #self.player.play("../../files/midi/"+params['chosen_song_name'])
 
     def afterLoad(self, controller, params):
         return 1
 
     def reset(self,controller):
-        self.player.stop()
+        #self.player.stop()
         controller.change_frame('Listening', {})
