@@ -27,5 +27,5 @@ class Playing(Frame):
         return 1
 
     def reset(self,controller):
-        #self.player.stop()
+        self.player.stop()
         controller.change_frame('Listening', {})
