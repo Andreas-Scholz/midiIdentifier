@@ -69,8 +69,6 @@ class Piano(object):
                     self.progress += 5
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
-        fluid.write("reset\n".encode('ascii'))
-        fluid.write("quit\n".encode('ascii'))
         self.inp.close()
         self.isDone = True
 
