@@ -19,7 +19,7 @@ class Choose(Frame):
             song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
             rowc += 1
 
-        button = Button(self, text="<-- Reset",
+        button = Button(self, text="<-- Reset", width=controller.button_width, height=controller.button_height, font=controller.main_font,
                            command=lambda: controller.change_frame("Listening", {}))
         button.grid(row=rowc + 1, column=0, padx=10, pady=3)
 
