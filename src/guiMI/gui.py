@@ -68,7 +68,6 @@ class Gui(tk.Tk):
             type_loaded = Processing
         self.current_frame.grid_forget()
         self.current_frame.destroy()
-        del self.current_frame
         self.current_frame = type_loaded(parent=self.container, controller=self, params=params)
         self.current_frame.configure(background=self.bg)
         self.current_frame.grid(row=0, column=0, sticky="n")
