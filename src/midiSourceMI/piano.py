@@ -7,7 +7,7 @@ from telnetlib import Telnet
 # set up pygame
 pygame.mixer.pre_init(44100, -16, 2, 2048)
 pygame.init()
-pygame.midi.init()
+#pygame.midi.init()
 
 # set up fluidsynth
 #fluid = Telnet("192.168.0.21","9988")
@@ -24,7 +24,8 @@ class Piano(object):
     midi = ""
 
     def __init__(self, input_device_id):
-        self.inp = pygame.midi.Input(input_device_id,0)
+        pygame.midi.init()
+        self.inp = pygame.midi.Input(input_device_id)
         self._reset_all()
 
     @classmethod
@@ -70,6 +71,7 @@ class Piano(object):
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
         self.inp.close()
+        pygame.midi.quit()
         self.isDone = True
 
 def main():
