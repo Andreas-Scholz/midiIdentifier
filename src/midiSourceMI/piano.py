@@ -24,7 +24,7 @@ class Piano(object):
     midi = ""
 
     def __init__(self, input_device_id):
-        self.inp = pygame.midi.Input(input_device_id)
+        self.inp = pygame.midi.Input(input_device_id,0)
         self._reset_all()
 
     @classmethod
