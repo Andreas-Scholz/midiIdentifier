@@ -17,6 +17,7 @@ def compare(inp, archive):
     for key, value in archive.items():
         if count % 100 == 0:
             print(count)
+        print(inp + " - " + value + " - ")
         ratio = difflib.SequenceMatcher(None, inp, value).ratio()
         matches[key] = "%.2f" % round(ratio * 100, 2)
         count += 1
