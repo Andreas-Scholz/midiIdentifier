@@ -32,7 +32,7 @@ def compare(inp, archive):
         count += 1
     sorted_matches = (sorted(matches.items(), key=operator.itemgetter(1)))
     print("Difflib: " + str(sorted_matches))
-    return sorted_matches
+    return sorted_matches[:5]
 
 
 def compare2(inp, archive):

@@ -19,8 +19,9 @@ class Choose(Frame):
         matches_lev = compare.levenshtein(params['midi'], archive)
         matches_count = compare.compare2(params['midi_list'], list_archive)
 
-        for value, key in matches.items():
-            key = str(key)
+        for pair in matches:
+            key = pair[1]
+            value = pair[0]
             song_button = Button(self, text=value+' ('+key+')', width=controller.button_width, height=controller.button_height, font=controller.main_font,
                                     command=lambda key=key, value=value: self.choose(controller, key, value))
             song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
