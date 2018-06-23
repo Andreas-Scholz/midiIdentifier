@@ -35,6 +35,30 @@ def compare(inp, archive):
     return sorted_matches[:5]
 
 
+def get_diffs(notes):
+    diff_notes = list()
+    first_note = notes[0]
+    first = True
+    for note in notes:
+        if first:
+            first = False
+        else:
+            diff = int(first_note) - int(note)
+            diff_notes.append(diff)
+    return diff_notes
+
+
+def compare_diffs(inp, archive):
+    diff_inp = get_diffs(inp)
+    inp_str = "n".join(str(x) for x in diff_inp)
+    diff_archive = {}
+    for key, value in archive.items():
+        diff_arc = get_diffs(value)
+        arc_str = "n".join(str(x) for x in diff_arc)
+        diff_archive[key] = arc_str
+    return compare(inp_str, diff_archive)
+
+
 def compare2(inp, archive):
     matches = dict()
     count_inp = dict()
