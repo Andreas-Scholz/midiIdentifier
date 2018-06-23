@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../')
 import tkinter as tk
 from tkinter import font as tkfont
 from guiMI.Canvas import Canvas
