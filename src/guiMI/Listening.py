@@ -9,11 +9,32 @@ class Listening(Frame):
         Frame.__init__(self, parent)
         self.controller = controller
 
-        label = Label(self, text="Listening-Tab", font=controller.title_font, background=controller.bg, foreground=controller.fg)
+        label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=15)
         label.grid(row=0, column=0, padx=10, pady=30)
 
-        self.status = Label(self, text="", font=controller.main_font)
-        self.status.grid(row=1, column=0, padx=10, pady=controller.pady)
+        final_string = "> Play a song:"
+        delta = controller.delta
+        delay = 0
+        for i in range(len(final_string) + 1):
+            s = final_string[:i]
+            update_text = lambda s=s: label.config(text=s)
+            label.after(delay, update_text)
+            delay += delta
+
+        label2 = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=15)
+        label2.grid(row=1, column=0, padx=10, pady=30)
+
+        final_string = "> Progress:"
+        for i in range(len(final_string) + 1):
+            s = final_string[:i]
+            update_text = lambda s=s: label2.config(text=s)
+            label2.after(delay, update_text)
+            delay += delta
+
+        self.status = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.bg, anchor="w", width=15)
+        self.status.grid(row=1, column=1, padx=10, pady=controller.pady)
+        show_status = lambda: self.status.config(foreground=controller.prompt)
+        self.status.after(delay, show_status)
 
     def load(self, controller, params):
         return 1
@@ -29,7 +50,7 @@ class Listening(Frame):
         while not piano.is_done():
             time.sleep(1)
             print("Progress: {}%".format(piano.get_progress()))
-            self.status['text'] = "Progress: {}%".format(piano.get_progress())
+            self.status['text'] = "{}%".format(piano.get_progress())
             self.update()
         pianoThread.join()
         self.status['text'] = "Done"

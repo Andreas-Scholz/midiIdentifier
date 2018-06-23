@@ -1,5 +1,6 @@
 from tkinter import *
 from audioMI.MidiPlayer2 import MidiPlayer2
+import functools
 
 class Playing(Frame):
 
@@ -9,18 +10,39 @@ class Playing(Frame):
 
         self.player = MidiPlayer2()
 
-        label = Label(self, text="Playing Song...", font=controller.title_font, background=controller.bg, foreground=controller.fg)
+        label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=50)
         label.grid(row=0, column=0, padx=10, pady=30)
 
-        self.chosen_song = Label(self, text="", font=controller.main_font)
-        self.chosen_song.grid(row=1, column=0, padx=10, pady=controller.pady)
+        final_string = "> Playing Song:"
+        self.delta = controller.delta
+        self.delay = 0
+        for i in range(len(final_string) + 1):
+            s = final_string[:i]
+            label.after(self.delay, functools.update_wrapper( functools.partial(label.config, text=s), label.config))
+            self.delay += self.delta
 
-        button = Button(self, text="<-- Reset", width=controller.button_width, height=controller.button_height, font=controller.main_font,
-                           command=lambda:self.reset(controller))
-        button.grid(row=2, column=0, padx=10, pady=controller.pady)
+        self.label2 = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=50)
+        self.label2.grid(row=1, column=0, padx=10, pady=controller.pady)
+
+        self.button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=50)
+        self.button.grid(row=2, column=0, padx=10, pady=controller.pady)
+        self.button.bind("<Button-1>", self.reset, controller)
 
     def load(self, controller, params):
-        self.chosen_song['text'] = params['chosen_song_name']
+        song_display = params['chosen_song_name'].replace(".mid","")
+        final_string = "> " + song_display
+        #self.chosen_song['text'] = params['chosen_song_name']
+        for i in range(len(final_string) + 1):
+            s = final_string[:i]
+            self.label2.after(self.delay, functools.update_wrapper( functools.partial(self.label2.config, text=s), self.label2.config))
+            self.delay += self.delta
+
+        final_string = "> Reset"
+        for i in range(len(final_string) + 1):
+            s = final_string[:i]
+            self.button.after(self.delay, functools.update_wrapper( functools.partial(self.button.config, text=s), self.button.config))
+            self.delay += self.delta
+
         self.player.play("../../files/new_midi/"+params['chosen_song_name'])
 
     def afterLoad(self, controller, params):
@@ -28,4 +50,4 @@ class Playing(Frame):
 
     def reset(self,controller):
         self.player.stop()
-        controller.change_frame('Listening', {})
+        self.controller.change_frame('Listening', {})

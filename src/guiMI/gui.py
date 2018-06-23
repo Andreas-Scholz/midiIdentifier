@@ -18,10 +18,13 @@ class Gui(tk.Tk):
         self.title_font = tkfont.Font(family='Courier', size=24, weight="bold")
         self.bg = "black"
         self.fg = "white"
+        self.prompt = "SpringGreen2"
         self.main_font = tkfont.Font(family='Courier', size=16, weight='bold')
         self.pady = 10
         self.button_width = 60
         self.button_height = 1
+        self.label_width = 50
+        self.delta = 100
 
         self.container = tk.Frame(self,background=self.bg)
         self.container.pack(side="top", fill="both", expand=True)
@@ -73,7 +76,7 @@ class Gui(tk.Tk):
         self.current_frame.destroy()
         self.current_frame = type_loaded(parent=self.container, controller=self, params=params)
         self.current_frame.configure(background=self.bg)
-        self.current_frame.grid(row=0, column=0, sticky="n")
+        self.current_frame.grid(row=0, column=0, sticky="nw")
         self.current_frame.tkraise()
         self.current_frame.load(self, params)
         self.current_frame.afterLoad(self, params)
