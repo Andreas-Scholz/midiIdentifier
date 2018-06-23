@@ -10,6 +10,16 @@ def getArchive():
         smallArchive[song['name']] = song['short_midi']
     return smallArchive
 
+def getListArchive():
+    with open('../../files/songs.json') as json_data:
+        archive = json.load(json_data)
+    smallArchive = {}
+    for song in archive:
+        smallArchive[song['name']] = list()
+        for note in song['notes']:
+            smallArchive[song['name']].append(str(note))
+    return smallArchive
+
 
 def compare(inp, archive):
     matches = dict()
@@ -17,11 +27,40 @@ def compare(inp, archive):
     for key, value in archive.items():
         if count % 100 == 0:
             print(count)
-        print(inp + " - " + value + " - ")
         ratio = difflib.SequenceMatcher(None, inp, value).ratio()
         matches[key] = "%.2f" % round(ratio * 100, 2)
         count += 1
-    return matches
+    sorted_matches = (sorted(matches.items(), key=operator.itemgetter(1)))
+    print("Difflib: " + str(sorted_matches))
+    return sorted_matches
+
+
+def compare2(inp, archive):
+    matches = dict()
+    count_inp = dict()
+    for note in inp:
+        if not note in count_inp:
+            count_inp[note] = 1
+        else:
+            count_inp[note] += 1
+
+    for key, value in archive.items():
+        count_arc = dict()
+        for note in value:
+            if note not in count_arc:
+                count_arc[note] = 1
+            else:
+                count_arc[note] += 1
+        diff = 0
+        for note, c in count_inp.items():
+            if note in count_arc:
+                diff += abs(c - count_arc[note])
+            else:
+                diff += c
+        matches[str(key)] = diff
+    sorted_matches = sorted(matches.items(), key=operator.itemgetter(1))
+    print("Counts: " + str(sorted_matches))
+    return sorted_matches
 
 
 def levenshtein(inp, archive):
@@ -47,7 +86,9 @@ def levenshtein(inp, archive):
                 v0[j] = v1[j]
 
         matches[key] = v1[len(value)]
-    return matches
+    sorted_matches = sorted(matches.items(), key=operator.itemgetter(1))
+    print("Levenshtein: " + str(sorted_matches))
+    return sorted_matches
 
 
 def main():

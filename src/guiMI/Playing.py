@@ -9,7 +9,7 @@ class Playing(Frame):
 
         self.player = MidiPlayer2()
 
-        label = Label(self, text="Playing Song...", font=controller.title_font, background=controller.bg)
+        label = Label(self, text="Playing Song...", font=controller.title_font, background=controller.bg, foreground=controller.fg)
         label.grid(row=0, column=0, padx=10, pady=30)
 
         self.chosen_song = Label(self, text="", font=controller.main_font)

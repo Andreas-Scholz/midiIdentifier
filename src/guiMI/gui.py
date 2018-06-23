@@ -13,11 +13,12 @@ class Gui(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
 
-        self.title_font = tkfont.Font(family='Helvetica', size=24, weight="bold", slant="italic")
-        self.bg = "SlateGray3"
-        self.main_font = tkfont.Font(family='Helvetica', size=18, weight='bold')
+        self.title_font = tkfont.Font(family='Verdana', size=24, weight="bold")
+        self.bg = "black"
+        self.fg = "white"
+        self.main_font = tkfont.Font(family='Verdana', size=16, weight='bold')
         self.pady = 10
-        self.button_width = 40
+        self.button_width = 60
         self.button_height = 1
 
         self.container = tk.Frame(self,background=self.bg)

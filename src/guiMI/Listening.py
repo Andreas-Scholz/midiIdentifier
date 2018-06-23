@@ -9,7 +9,7 @@ class Listening(Frame):
         Frame.__init__(self, parent)
         self.controller = controller
 
-        label = Label(self, text="Listening-Tab", font=controller.title_font, background=controller.bg)
+        label = Label(self, text="Listening-Tab", font=controller.title_font, background=controller.bg, foreground=controller.fg)
         label.grid(row=0, column=0, padx=10, pady=30)
 
         self.status = Label(self, text="", font=controller.main_font)
@@ -34,6 +34,8 @@ class Listening(Frame):
         pianoThread.join()
         self.status['text'] = "Done"
         self.update()
+        #midi = piano.get_midi_list()
         midi = piano.get_midi()
+        midi_list = piano.get_midi_list()
         #del piano
-        controller.change_frame("Choose", {'midi':midi})
+        controller.change_frame("Choose", {'midi':midi, 'midi_list':midi_list})

@@ -5,7 +5,7 @@ from mido import MidiFile
 from midiSourceMI.piano import Piano
 
 # MIDI_DIR = "../../files/midi/top1000/"
-MIDI_DIR = "../../files/midi/"
+MIDI_DIR = "../../files/new_midi/"
 OUT = "../../files/songs.json"
 JSON_START = "[\n"
 JSON_END = "]\n"
@@ -92,14 +92,14 @@ def main():
             short_midis[midi] = short_midi
             output_file.write(SONG_START)
             output_file.write("\t\t\"name\": \"" + midi + "\",\n")
-            output_file.write("\t\t\"notes\": \"[")
+            output_file.write("\t\t\"notes\": [")
             for j in range(len(notes)):
                 note = str(notes[j])
                 if j is not len(notes):
                     output_file.write(note + ",")
                 else:
                     output_file.write(note)
-            output_file.write("]\",\n")
+            output_file.write("],\n")
             output_file.write("\t\t\"short_midi\": \"" + short_midi + "\"\n")
             if i != len(midi_files)-1:
                 output_file.write(SONG_END)
@@ -113,9 +113,9 @@ def main():
     print(error_files)
 
     piano = Piano.without_devices()
-    for sm in short_midis.keys():
-        print("Playing \"" + sm + "\"")
-        piano.play_midi(short_midis[sm])
+    #for sm in short_midis.keys():
+        #print("Playing \"" + sm + "\"")
+        #piano.play_midi(short_midis[sm])
 
     print("--- %s seconds ---" % (time.time() - start_time))
 

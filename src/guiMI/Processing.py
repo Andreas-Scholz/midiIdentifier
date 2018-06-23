@@ -9,7 +9,7 @@ class Processing(Frame):
         rowc = 0
         self.matches = {}
 
-        label = Label(self, text="Processing-Tab", font=controller.title_font, background=controller.bg)
+        label = Label(self, text="Processing-Tab", font=controller.title_font, background=controller.bg, foreground=controller.fg)
         label.grid(row=rowc, column=0, padx=10, pady=30)
         button = Button(self, text="<-- Reset", width=int(controller.button_width/2), height=controller.button_height, font=controller.main_font,
                            command=lambda: controller.change_frame("Listening", {}))

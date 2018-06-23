@@ -6,7 +6,7 @@ class Choose_output(Frame):
         Frame.__init__(self, parent)
         self.controller = controller
         rowc = 0
-        label = Label(self, text="Output-Device wählen", font=controller.title_font, background=controller.bg)
+        label = Label(self, text="Output-Device wählen", font=controller.title_font, background=controller.bg, foreground=controller.fg)
         label.grid(row=rowc, column=0, padx=10, pady=30)
         rowc += 1
 

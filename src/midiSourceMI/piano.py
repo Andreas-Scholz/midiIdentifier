@@ -22,6 +22,7 @@ class Piano(object):
     progress = 0
     isDone = False
     midi = ""
+    midi_list = []
 
     def __init__(self, input_device_id):
         self.inp = pygame.midi.Input(input_device_id)
@@ -56,6 +57,9 @@ class Piano(object):
     def get_midi(self):
         return self.midi
 
+    def get_midi_list(self):
+        return self.midi_list
+
     def listen(self):
         self._reset_all()
         while self.progress < 100:
@@ -67,9 +71,10 @@ class Piano(object):
                     if(key_data[0] == KEY_DOWN):
                         fluid.write(("noteon 0 " + key_value + " 127\n").encode('ascii'))
                         self.midi += ("n" + key_value)
+                        self.midi_list.append(key_value)
                     if(key_data[0] == KEY_UP):
                         fluid.write(("noteoff 0 " + key_value + " 127\n").encode('ascii'))
-                    self.progress += 5
+                    self.progress += 2.5
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
         self.isDone = True
