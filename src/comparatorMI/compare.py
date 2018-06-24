@@ -30,6 +30,12 @@ def compare(inp, archive):
         ratio = difflib.SequenceMatcher(None, inp, value).ratio()
         matches[key] = "%.2f" % round(ratio * 100, 2)
         count += 1
+
+    # Fixes the issue where a zero-difference match would not be at the top of the sorted list
+    for key, value in matches.items():
+        if value == "100.00":
+            matches[key] = "0.00"
+
     sorted_matches = (sorted(matches.items(), key=operator.itemgetter(1)))
     print("Difflib: " + str(sorted_matches))
     return sorted_matches[:5]
