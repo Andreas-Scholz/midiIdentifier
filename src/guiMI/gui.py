@@ -21,8 +21,9 @@ class Gui(tk.Tk):
         self.prompt = "SpringGreen2"
         self.main_font = tkfont.Font(family='Courier', size=16, weight='bold')
         self.pady = 20
-        self.padx = 40
-        self.pady_heading = 40
+        self.pady_heading = (40, 25)
+        self.pady_reset = 25
+        self.padx = 70
         self.button_width = 60
         self.button_height = 1
         self.label_width = 50
