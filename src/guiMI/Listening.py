@@ -11,7 +11,7 @@ class Listening(Frame):
         self.controller = controller
 
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=15)
-        label.grid(row=0, column=0, padx=10, pady=30)
+        label.grid(row=0, column=0, padx=controller.padx, pady=controller.pady_heading)
 
         final_string = "> PLAY A SONG:"
         delta = controller.delta
@@ -23,7 +23,7 @@ class Listening(Frame):
             delay += delta
 
         label2 = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=15)
-        label2.grid(row=1, column=0, padx=10, pady=30)
+        label2.grid(row=1, column=0, padx=controller.padx, pady=30)
 
         final_string = "> PROGRESS:"
         for i in range(len(final_string) + 1):
@@ -36,7 +36,7 @@ class Listening(Frame):
         delay+=delta
 
         self.status = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.bg, anchor="w", width=15)
-        self.status.grid(row=1, column=1, padx=10, pady=controller.pady)
+        self.status.grid(row=1, column=1, padx=controller.padx, pady=controller.pady)
         show_status = lambda: self.status.config(foreground=controller.prompt)
         self.status.after(delay, show_status)
 

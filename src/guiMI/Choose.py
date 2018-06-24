@@ -9,7 +9,7 @@ class Choose(Frame):
         rowc = 0
 
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=controller.label_width)
-        label.grid(row=rowc, column=0, padx=10, pady=30)
+        label.grid(row=rowc, column=0, padx=controller.padx, pady=controller.pady_heading)
 
         final_string = "> WHICH SONG DID YOU MEAN?"
         delta = controller.delta
@@ -36,7 +36,7 @@ class Choose(Frame):
             key = pair[1]
             value = pair[0]
             song_button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="nw", width=controller.label_width)
-            song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
+            song_button.grid(row=rowc, column=0, padx=controller.padx, pady=controller.pady)
             song_button.bind("<Button-1>",lambda key=key, value=value: self.choose(controller, key, value))
             display_value = value.replace(".mid", "")
             final_string = "> " + display_value
@@ -50,7 +50,7 @@ class Choose(Frame):
         #                    command=lambda: controller.change_frame("Listening", {}))
         # button.grid(row=rowc + 1, column=0, padx=10, pady=3)
         button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=controller.label_width)
-        button.grid(row=rowc, column=0, padx=10, pady=30)
+        button.grid(row=rowc, column=0, padx=controller.padx, pady=30)
         button.bind("<Button-1>", self.reset, controller)
         final_string = "> RESET"
         for i in range(len(final_string) + 1):

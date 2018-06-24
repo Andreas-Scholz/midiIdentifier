@@ -10,7 +10,7 @@ class Choose_input(Frame):
 
 
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=controller.label_width)
-        label.grid(row=rowc, column=0, padx=10, pady=30)
+        label.grid(row=rowc, column=0, padx=controller.padx, pady=controller.pady_heading)
 
         final_string = "> CHOOSE AN INPUT DEVICE:"
         delta = controller.delta
@@ -25,7 +25,7 @@ class Choose_input(Frame):
         rowc += 1
         for value, key in devices.list_midi_input_devices().items():
             song_button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=controller.label_width)
-            song_button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
+            song_button.grid(row=rowc, column=0, padx=controller.padx, pady=controller.pady)
             song_button.bind("<Button-1>",lambda value=value, key=key: self.choose(controller, key, value))
             final_string = "> " + value
             for i in range(len(final_string) + 1):

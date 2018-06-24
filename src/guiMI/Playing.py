@@ -11,7 +11,7 @@ class Playing(Frame):
         self.player = MidiPlayer2()
 
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=50)
-        label.grid(row=0, column=0, padx=10, pady=30)
+        label.grid(row=0, column=0, padx=controller.padx, pady=controller.pady_heading)
 
         final_string = "> PLAYING SONG:"
         self.delta = controller.delta
@@ -22,10 +22,10 @@ class Playing(Frame):
             self.delay += self.delta
 
         self.label2 = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=50)
-        self.label2.grid(row=1, column=0, padx=10, pady=controller.pady)
+        self.label2.grid(row=1, column=0, padx=controller.padx, pady=controller.pady)
 
         self.button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=50)
-        self.button.grid(row=2, column=0, padx=10, pady=30)
+        self.button.grid(row=2, column=0, padx=controller.padx, pady=30)
         self.button.bind("<Button-1>", self.reset, controller)
 
     def load(self, controller, params):
