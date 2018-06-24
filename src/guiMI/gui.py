@@ -27,7 +27,7 @@ class Gui(tk.Tk):
         self.button_width = 60
         self.button_height = 1
         self.label_width = 50
-        self.delta = 70
+        self.delta = 40
 
         self.container = tk.Frame(self,background=self.bg)
         self.container.pack(side="top", fill="both", expand=True)
