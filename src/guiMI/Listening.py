@@ -2,6 +2,7 @@ from tkinter import *
 import threading
 import time
 from midiSourceMI.piano import Piano
+import functools
 
 class Listening(Frame):
 
@@ -31,16 +32,16 @@ class Listening(Frame):
             label2.after(delay, update_text)
             delay += delta
 
+        label2.after(delay, functools.update_wrapper( functools.partial(self.start_piano, controller=self.controller), self.start_piano))
+        delay+=delta
+
         self.status = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.bg, anchor="w", width=15)
         self.status.grid(row=1, column=1, padx=10, pady=controller.pady)
         show_status = lambda: self.status.config(foreground=controller.prompt)
         self.status.after(delay, show_status)
 
-    def load(self, controller, params):
-        return 1
-
-    def afterLoad(self, controller, params):
-        piano = Piano(controller.input)
+    def start_piano(self, controller):
+        piano = Piano(self.controller.input)
 
         pianoThread = threading.Thread(target=piano.listen)
         # progressThread = threading.Thread(target=print_progress)
@@ -59,4 +60,11 @@ class Listening(Frame):
         midi = piano.get_midi()
         midi_list = piano.get_midi_list()
         #del piano
-        controller.change_frame("Choose", {'midi':midi, 'midi_list':midi_list})
+        self.controller.change_frame("Choose", {'midi':midi, 'midi_list':midi_list})
+
+
+    def load(self, controller, params):
+        return 1
+
+    def afterLoad(self, controller, params):
+        return 1
