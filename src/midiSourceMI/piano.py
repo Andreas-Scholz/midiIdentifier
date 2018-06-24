@@ -70,7 +70,7 @@ class Piano(object):
                         self.midi_list.append(key_value)
                     if(key_data[0] == KEY_UP):
                         fluid.write(("noteoff 0 " + key_value + " 127\n").encode('ascii'))
-                    self.progress += 5
+                    self.progress += 2.5
             # wait a short while to prevent 100% cpu utilization
             pygame.time.wait(100)
         self.isDone = True
