@@ -10,16 +10,6 @@
 		"short_midi": "n77n78n79n81n79n74n75n76n79n77n82n61n65n80n70n78n77n69n72n65"
 	},
 	{
-		"name": "ALLE MEINE ENTCHEN (HEILPAED MOD).mid",
-		"notes": [60,79,88,91,94,96,98,102,38,38,44,74,81,90,93,61,62,45,95,40],
-		"short_midi": "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
-	},
-	{
-		"name": "ALLE MEINE ENTCHEN (HEILPAED).mid",
-		"notes": [60,79,88,91,94,96,98,102,38,38,44,74,81,90,93,61,62,45,95,40],
-		"short_midi": "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
-	},
-	{
 		"name": "ALLE MEINE ENTCHEN.mid",
 		"notes": [48,50,52,53,55,55,57,57,57,57,55,57,57,57,57,55,53,53,53,53],
 		"short_midi": "n48n50n52n53n55n55n57n57n57n57n55n57n57n57n57n55n53n53n53n53"
