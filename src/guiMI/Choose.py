@@ -50,7 +50,7 @@ class Choose(Frame):
         #                    command=lambda: controller.change_frame("Listening", {}))
         # button.grid(row=rowc + 1, column=0, padx=10, pady=3)
         button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=controller.label_width)
-        button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
+        button.grid(row=rowc, column=0, padx=10, pady=30)
         button.bind("<Button-1>", self.reset, controller)
         final_string = "> RESET"
         for i in range(len(final_string) + 1):

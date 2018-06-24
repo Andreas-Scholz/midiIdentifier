@@ -25,7 +25,7 @@ class Playing(Frame):
         self.label2.grid(row=1, column=0, padx=10, pady=controller.pady)
 
         self.button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=50)
-        self.button.grid(row=2, column=0, padx=10, pady=controller.pady)
+        self.button.grid(row=2, column=0, padx=10, pady=30)
         self.button.bind("<Button-1>", self.reset, controller)
 
     def load(self, controller, params):
