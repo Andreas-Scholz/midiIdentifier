@@ -88,7 +88,7 @@ def main():
         if i%100 == 0:
             print(str(i))
         try:
-            notes, short_midi = _convert_to_short_midi(midi)
+            notes, short_midi = _convert_to_short_midi(midi, 10)
             short_midis[midi] = short_midi
             output_file.write(SONG_START)
             output_file.write("\t\t\"name\": \"" + midi + "\",\n")
