@@ -27,9 +27,9 @@ class Choose(Frame):
         print(params['midi_list'])
         archive = compare.getArchive()
         list_archive = compare.getListArchive()
-        matches_old = compare.compare(params['midi'], archive)
-        matches_lev = compare.levenshtein(params['midi'], archive)
-        matches_count = compare.compare2(params['midi_list'], list_archive)
+        #matches_old = compare.compare(params['midi'], archive)
+        #matches_lev = compare.levenshtein(params['midi'], archive)
+        #matches_count = compare.compare2(params['midi_list'], list_archive)
         matches = compare.compare_diffs(params['midi_list'], list_archive)
 
         for pair in matches:

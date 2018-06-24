@@ -33,7 +33,7 @@ def compare(inp, archive):
         count += 1
 
     sorted_matches = (sorted(matches.items(), key=operator.itemgetter(1)))
-    print("Difflib: " + str(sorted_matches))
+    #print("Difflib (Distance): " + str(sorted_matches))
     return reversed(sorted_matches[-5:])
 
 
