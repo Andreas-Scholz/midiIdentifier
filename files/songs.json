@@ -1,201 +1,291 @@
 [
 	{
-		"name": "A-Place_For_Love_-_Victor_M_Barba_-_Instrumental-piano-level-7.mid",
+		"name": "A PLACE FOR LOVE.mid",
 		"notes": [83,79,84,83,81,79,81,78,81,75,83,81,79,81,83,76,79,71,81,79],
 		"short_midi": "n83n79n84n83n81n79n81n78n81n75n83n81n79n81n83n76n79n71n81n79"
 	},
 	{
-		"name": "alle_meine_entchen--heilpaedagogik-info-de.mp3.mid",
+		"name": "AIDA.mid",
+		"notes": [77,78,79,81,79,74,75,76,79,77,82,61,65,80,70,78,77,69,72,65],
+		"short_midi": "n77n78n79n81n79n74n75n76n79n77n82n61n65n80n70n78n77n69n72n65"
+	},
+	{
+		"name": "ALLE MEINE ENTCHEN (HEILPAED MOD).mid",
 		"notes": [60,79,88,91,94,96,98,102,38,38,44,74,81,90,93,61,62,45,95,40],
 		"short_midi": "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
 	},
 	{
-		"name": "alle_meine_entchen--heilpaedagogik_modified.mid",
+		"name": "ALLE MEINE ENTCHEN (HEILPAED).mid",
 		"notes": [60,79,88,91,94,96,98,102,38,38,44,74,81,90,93,61,62,45,95,40],
 		"short_midi": "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
 	},
 	{
-		"name": "Alle_Meine_Entchen.mid",
+		"name": "ALLE MEINE ENTCHEN.mid",
 		"notes": [48,50,52,53,55,55,57,57,57,57,55,57,57,57,57,55,53,53,53,53],
 		"short_midi": "n48n50n52n53n55n55n57n57n57n57n55n57n57n57n57n55n53n53n53n53"
 	},
 	{
-		"name": "always-with-me-spirited-away-instrumental-piano-flute-violin-level-7.mid",
+		"name": "ALLE VOEGLEIN.mid",
+		"notes": [54,62,62,50,57,66,69,54,74,66,50,67,55,71,74,59,71,69,62,66],
+		"short_midi": "n54n62n62n50n57n66n69n54n74n66n50n67n55n71n74n59n71n69n62n66"
+	},
+	{
+		"name": "ALWAYS WITH ME (SPIRITED AWAY).mid",
 		"notes": [65,41,72,48,53,81,57,65,41,72,48,53,81,57,65,41,72,48,53,81],
 		"short_midi": "n65n41n72n48n53n81n57n65n41n72n48n53n81n57n65n41n72n48n53n81"
 	},
 	{
-		"name": "anniversary-song-glen-miller-waltz-piano-level-6 (2).mid",
+		"name": "ANNIVERSARY SONG.mid",
 		"notes": [64,52,56,59,56,59,52,68,56,59,69,56,59,71,52,56,59,56,59,52],
 		"short_midi": "n64n52n56n59n56n59n52n68n56n59n69n56n59n71n52n56n59n56n59n52"
 	},
 	{
-		"name": "bagatella-classical-piano-level-6 (1).mid",
+		"name": "BAGATELLA CLASSICAL.mid",
 		"notes": [62,55,59,67,55,59,71,55,59,74,55,59,55,59,71,55,59,69,55,60],
 		"short_midi": "n62n55n59n67n55n59n71n55n59n74n55n59n55n59n71n55n59n69n55n60"
 	},
 	{
-		"name": "blue-danube-waltz-strauss-classical-piano-level-6.mid",
-		"notes": [60,64,67,67,48,52,55,76,79,52,55,76,79,43,52,55,72,76,52,55],
-		"short_midi": "n60n64n67n67n48n52n55n76n79n52n55n76n79n43n52n55n72n76n52n55"
-	},
-	{
-		"name": "Blue_Victor_M_Barba_Instrumental_Piano_Level_7.mid",
-		"notes": [72,45,64,52,69,60,71,72,64,72,64,67,38,65,45,65,53,64,65,50],
-		"short_midi": "n72n45n64n52n69n60n71n72n64n72n64n67n38n65n45n65n53n64n65n50"
-	},
-	{
-		"name": "boston-agustana-pop-piano-level-6.mid",
-		"notes": [60,48,55,64,60,64,67,64,60,64,59,47,55,64,59,64,67,64,59,64],
-		"short_midi": "n60n48n55n64n60n64n67n64n60n64n59n47n55n64n59n64n67n64n59n64"
-	},
-	{
-		"name": "Breakfast_At_Tiffanys_-_Henry_Mancini_-_Movies_-_piano-level-7.mid",
-		"notes": [41,60,62,65,48,69,46,74,64,45,55,72,63,50,54,70,69,72,62,43],
-		"short_midi": "n41n60n62n65n48n69n46n74n64n45n55n72n63n50n54n70n69n72n62n43"
-	},
-	{
-		"name": "by-the-time-i-get-to-phoenix-glenn-campbell-ballad-piano-level-7.mid",
-		"notes": [64,65,67,55,58,62,67,55,58,62,67,55,58,62,67,67,48,52,55,67],
-		"short_midi": "n64n65n67n55n58n62n67n55n58n62n67n55n58n62n67n67n48n52n55n67"
-	},
-	{
-		"name": "carol-of-the-bells-christmas-piano-level-6.mid",
-		"notes": [74,59,73,74,71,74,57,73,74,71,74,55,73,74,71,74,54,73,74,71],
-		"short_midi": "n74n59n73n74n71n74n57n73n74n71n74n55n73n74n71n74n54n73n74n71"
-	},
-	{
-		"name": "cuckoo-suzuki-piano-level-6.mid",
-		"notes": [79,48,52,76,55,79,48,52,76,55,74,53,72,52,74,50,76,48,52,72],
-		"short_midi": "n79n48n52n76n55n79n48n52n76n55n74n53n72n52n74n50n76n48n52n72"
-	},
-	{
-		"name": "Deborahs_Theme_-_Ennio_Morricone_-_Movies_-_Piano_-_Level_-_7.mid",
+		"name": "BEORAHS THEME.mid",
 		"notes": [40,40,59,64,63,66,64,40,40,59,68,66,69,68,40,40,68,66,64,71],
 		"short_midi": "n40n40n59n64n63n66n64n40n40n59n68n66n69n68n40n40n68n66n64n71"
 	},
 	{
-		"name": "Everything-happens-for-a-reason-victor-m-barba-movies-piano-level-7.mid",
+		"name": "BLUE (VICTOR M BARBA).mid",
+		"notes": [72,45,64,52,69,60,71,72,64,72,64,67,38,65,45,65,53,64,65,50],
+		"short_midi": "n72n45n64n52n69n60n71n72n64n72n64n67n38n65n45n65n53n64n65n50"
+	},
+	{
+		"name": "BLUE DANUBE WALTZ.mid",
+		"notes": [60,64,67,67,48,52,55,76,79,52,55,76,79,43,52,55,72,76,52,55],
+		"short_midi": "n60n64n67n67n48n52n55n76n79n52n55n76n79n43n52n55n72n76n52n55"
+	},
+	{
+		"name": "BOSTON AGUSTANA.mid",
+		"notes": [60,48,55,64,60,64,67,64,60,64,59,47,55,64,59,64,67,64,59,64],
+		"short_midi": "n60n48n55n64n60n64n67n64n60n64n59n47n55n64n59n64n67n64n59n64"
+	},
+	{
+		"name": "BREAKFAST AT TIFFANYS.mid",
+		"notes": [41,60,62,65,48,69,46,74,64,45,55,72,63,50,54,70,69,72,62,43],
+		"short_midi": "n41n60n62n65n48n69n46n74n64n45n55n72n63n50n54n70n69n72n62n43"
+	},
+	{
+		"name": "BRUDER JAKOB.mid",
+		"notes": [65,67,69,65,65,67,69,65,69,70,72,69,70,72,72,74,72,70,69,65],
+		"short_midi": "n65n67n69n65n65n67n69n65n69n70n72n69n70n72n72n74n72n70n69n65"
+	},
+	{
+		"name": "BY THE TIME I GET TO PHOENIX.mid",
+		"notes": [64,65,67,55,58,62,67,55,58,62,67,55,58,62,67,67,48,52,55,67],
+		"short_midi": "n64n65n67n55n58n62n67n55n58n62n67n55n58n62n67n67n48n52n55n67"
+	},
+	{
+		"name": "CAROL OF THE BELLS.mid",
+		"notes": [74,59,73,74,71,74,57,73,74,71,74,55,73,74,71,74,54,73,74,71],
+		"short_midi": "n74n59n73n74n71n74n57n73n74n71n74n55n73n74n71n74n54n73n74n71"
+	},
+	{
+		"name": "CUCKOO SUZUKI.mid",
+		"notes": [79,48,52,76,55,79,48,52,76,55,74,53,72,52,74,50,76,48,52,72],
+		"short_midi": "n79n48n52n76n55n79n48n52n76n55n74n53n72n52n74n50n76n48n52n72"
+	},
+	{
+		"name": "EVERYTHING HAPPENS FOR A REASON.mid",
 		"notes": [46,65,74,53,69,72,58,70,53,69,70,62,46,53,60,46,53,57,46,65],
 		"short_midi": "n46n65n74n53n69n72n58n70n53n69n70n62n46n53n60n46n53n57n46n65"
 	},
 	{
-		"name": "forever-in-love-kenny-g-instrumental-piano-level-7 (1).mid",
+		"name": "EVITA.mid",
+		"notes": [42,42,42,42,36,60,64,67,60,55,79,79,79,79,36,48,79,40,52,43],
+		"short_midi": "n42n42n42n42n36n60n64n67n60n55n79n79n79n79n36n48n79n40n52n43"
+	},
+	{
+		"name": "FOREVER IN LOVE.mid",
 		"notes": [69,41,48,53,57,60,65,69,77,76,45,52,57,60,64,69,72,76,74,46],
 		"short_midi": "n69n41n48n53n57n60n65n69n77n76n45n52n57n60n64n69n72n76n74n46"
 	},
 	{
-		"name": "fur-elise-beethoven-classical-piano-level-7.mid",
+		"name": "FREUDE SCHOENER GOETTERFUNKEN.mid",
+		"notes": [71,67,71,67,72,69,74,71,74,71,72,69,71,67,69,62,67,59,67,59],
+		"short_midi": "n71n67n71n67n72n69n74n71n74n71n72n69n71n67n69n62n67n59n67n59"
+	},
+	{
+		"name": "FUR ELISE.mid",
 		"notes": [76,75,76,75,76,71,74,72,69,45,52,57,60,64,69,71,52,56,59,64],
 		"short_midi": "n76n75n76n75n76n71n74n72n69n45n52n57n60n64n69n71n52n56n59n64"
 	},
 	{
-		"name": "green-green-grass-of-home-engelbert-humperdink-ballad-piano-level-7.mid",
+		"name": "GREEN GREEN GRASS OF HOME.mid",
 		"notes": [69,70,72,53,72,57,60,71,74,72,53,57,60,72,72,74,46,77,50,53],
 		"short_midi": "n69n70n72n53n72n57n60n71n74n72n53n57n60n72n72n74n46n77n50n53"
 	},
 	{
-		"name": "its-a-small-world-disney-piano-level-6.mid",
-		"notes": [64,65,67,48,55,76,52,55,72,48,55,74,52,72,55,72,50,55,71,53],
-		"short_midi": "n64n65n67n48n55n76n52n55n72n48n55n74n52n72n55n72n50n55n71n53"
+		"name": "GUTEN ABEND GUTE NACHT.mid",
+		"notes": [60,64,60,64,64,67,60,64,64,60,64,60,64,67,64,60,67,64,72,64],
+		"short_midi": "n60n64n60n64n64n67n60n64n64n60n64n60n64n67n64n60n67n64n72n64"
 	},
 	{
-		"name": "I_Fought_The_Law-green-day-piano-level-6.mid",
+		"name": "HAENSCHEN KLEIN.mid",
+		"notes": [72,69,69,70,67,67,65,67,69,70,72,72,72,72,69,69,70,67,67,65],
+		"short_midi": "n72n69n69n70n67n67n65n67n69n70n72n72n72n72n69n69n70n67n67n65"
+	},
+	{
+		"name": "HAPPY BIRTHDAY.mid",
+		"notes": [60,60,60,60,62,53,57,62,60,60,65,53,57,65,64,48,58,64,60,60],
+		"short_midi": "n60n60n60n60n62n53n57n62n60n60n65n53n57n65n64n48n58n64n60n60"
+	},
+	{
+		"name": "HOCH SOLL ER LEBEN.mid",
+		"notes": [65,57,65,53,65,57,65,53,53,65,57,65,65,57,65,53,60,60,57,53],
+		"short_midi": "n65n57n65n53n65n57n65n53n53n65n57n65n65n57n65n53n60n60n57n53"
+	},
+	{
+		"name": "HOCHZEITSMARSCH.mid",
+		"notes": [60,60,60,60,60,60,60,60,60,60,60,60,64,60,64,60,64,60,64,60],
+		"short_midi": "n60n60n60n60n60n60n60n60n60n60n60n60n64n60n64n60n64n60n64n60"
+	},
+	{
+		"name": "I FOUGHT THE LAW (GREEN DAY).mid",
 		"notes": [59,52,64,57,64,59,66,59,64,59,57,56,52,52,59,64,52,57,52,64],
 		"short_midi": "n59n52n64n57n64n59n66n59n64n59n57n56n52n52n59n64n52n57n52n64"
 	},
 	{
-		"name": "la-vita-e-bella-nicola-piovani-movies-piano-level-7.mid",
+		"name": "ICH GEH MIT MEINER LATERNE.mid",
+		"notes": [60,65,65,69,65,69,72,69,65,67,67,67,67,69,67,65,60,65,65,69],
+		"short_midi": "n60n65n65n69n65n69n72n69n65n67n67n67n67n69n67n65n60n65n65n69"
+	},
+	{
+		"name": "IHR KINDERLEIN KOMMET.mid",
+		"notes": [67,67,64,67,67,64,67,65,62,65,64,67,67,64,67,67,64,67,65,62],
+		"short_midi": "n67n67n64n67n67n64n67n65n62n65n64n67n67n64n67n67n64n67n65n62"
+	},
+	{
+		"name": "IT'S A SMALL WORLD.mid",
+		"notes": [64,65,67,48,55,76,52,55,72,48,55,74,52,72,55,72,50,55,71,53],
+		"short_midi": "n64n65n67n48n55n76n52n55n72n48n55n74n52n72n55n72n50n55n71n53"
+	},
+	{
+		"name": "LA VITA E BELLA.mid",
 		"notes": [45,52,61,52,62,45,52,61,52,62,69,45,52,61,52,62,69,71,73,45],
 		"short_midi": "n45n52n61n52n62n45n52n61n52n62n69n45n52n61n52n62n69n71n73n45"
 	},
 	{
-		"name": "little-waltz-victor-m-barba-instrumental-piano-level-7.mid",
+		"name": "LITTLE WALTZ.mid",
 		"notes": [45,52,61,45,52,61,45,52,76,61,74,73,45,52,76,61,74,73,45,71],
 		"short_midi": "n45n52n61n45n52n61n45n52n76n61n74n73n45n52n76n61n74n73n45n71"
 	},
 	{
-		"name": "lo-mucho-que-te-amo-victor-m-barba-instrumental-piano-level-6.mid",
+		"name": "LO MUCHO QUE TE AMO.mid",
 		"notes": [62,43,47,50,43,47,50,67,43,66,47,64,50,67,43,66,47,59,50,60],
 		"short_midi": "n62n43n47n50n43n47n50n67n43n66n47n64n50n67n43n66n47n59n50n60"
 	},
 	{
-		"name": "love-story-taylor-swift-country-piano-level-7.mid",
+		"name": "LOVE STORY (TAYLOR SWIFT).mid",
 		"notes": [54,50,57,50,64,50,62,50,64,50,62,50,57,50,62,50,54,50,57,50],
 		"short_midi": "n54n50n57n50n64n50n62n50n64n50n62n50n57n50n62n50n54n50n57n50"
 	},
 	{
-		"name": "lullaby-brahms-classical-piano-level-6.mid",
+		"name": "LULLABY (BRAHMS).mid",
 		"notes": [66,66,69,50,54,66,57,66,69,50,54,66,57,69,74,50,73,54,57,71],
 		"short_midi": "n66n66n69n50n54n66n57n66n69n50n54n66n57n69n74n50n73n54n57n71"
 	},
 	{
-		"name": "my-favorite-time-of-the-year-victor-m-barba-christmas-piano-level-7.mid",
+		"name": "MY FAVORITE TIME OF THE YEAR.mid",
 		"notes": [67,48,52,55,52,69,48,52,67,55,52,72,48,52,55,52,71,48,52,69],
 		"short_midi": "n67n48n52n55n52n69n48n52n67n55n52n72n48n52n55n52n71n48n52n69"
 	},
 	{
-		"name": "ocean_breeze_victor_m_barba_instrumental_piano_level_6.mid",
+		"name": "MY HEART WILL GO ON.mid",
+		"notes": [76,78,49,52,78,49,56,61,56,80,63,64,52,56,63,80,81,80,76,47],
+		"short_midi": "n76n78n49n52n78n49n56n61n56n80n63n64n52n56n63n80n81n80n76n47"
+	},
+	{
+		"name": "OCEAN BREEZE.mid",
 		"notes": [76,60,64,67,48,42,35,64,42,62,64,42,62,42,64,77,42,38,62,42],
 		"short_midi": "n76n60n64n67n48n42n35n64n42n62n64n42n62n42n64n77n42n38n62n42"
 	},
 	{
-		"name": "one-last-chance-victor-m-barba-movies-piano-level-7.mid",
+		"name": "OH TANNENBAUM.mid",
+		"notes": [62,59,55,67,62,59,55,67,62,59,55,67,62,59,55,69,66,62,50,71],
+		"short_midi": "n62n59n55n67n62n59n55n67n62n59n55n67n62n59n55n69n66n62n50n71"
+	},
+	{
+		"name": "ONE LAST CHANCE.mid",
 		"notes": [45,52,61,52,62,45,52,61,52,62,61,76,45,52,61,52,62,78,76,73],
 		"short_midi": "n45n52n61n52n62n45n52n61n52n62n61n76n45n52n61n52n62n78n76n73"
 	},
 	{
-		"name": "Orquidea Waltz.mid",
+		"name": "ORQUIDEA WALTZ.mid",
 		"notes": [67,48,52,55,72,52,55,76,48,52,55,74,52,55,72,48,71,52,55,72],
 		"short_midi": "n67n48n52n55n72n52n55n76n48n52n55n74n52n55n72n48n71n52n55n72"
 	},
 	{
-		"name": "she-loves-you-the-beatles-ballad-piano-level-6.mid",
+		"name": "SHE LOVES YOU (THE BEATLES).mid",
 		"notes": [74,76,52,79,52,79,47,50,78,52,76,52,47,52,74,76,45,79,45,79],
 		"short_midi": "n74n76n52n79n52n79n47n50n78n52n76n52n47n52n74n76n45n79n45n79"
 	},
 	{
-		"name": "star-wars-john-williams-movies-piano-level-6 (1).mid",
+		"name": "STAR WARS.mid",
 		"notes": [65,65,65,70,58,62,77,58,62,75,55,58,74,72,82,58,62,77,75,55],
 		"short_midi": "n65n65n65n70n58n62n77n58n62n75n55n58n74n72n82n58n62n77n75n55"
 	},
 	{
-		"name": "super-mario-underwater-nintendo-piano-level-6 (1).mid",
+		"name": "STILLE NACHT.mid",
+		"notes": [65,62,53,46,67,63,65,62,53,46,62,58,53,46,65,62,53,46,67,63],
+		"short_midi": "n65n62n53n46n67n63n65n62n53n46n62n58n53n46n65n62n53n46n67n63"
+	},
+	{
+		"name": "SUPER MARIO.mid",
 		"notes": [62,64,66,67,69,70,71,71,71,67,76,48,52,55,52,55,75,43,52,55],
 		"short_midi": "n62n64n66n67n69n70n71n71n71n67n76n48n52n55n52n55n75n43n52n55"
 	},
 	{
-		"name": "there-goes-my-everything-engelbert-humperdink-ballad-piano-level-6.mid",
+		"name": "THERE GOES MY EVERYTHING.mid",
 		"notes": [67,65,64,48,67,52,55,72,53,57,60,69,67,48,64,52,55,48,52,55],
 		"short_midi": "n67n65n64n48n67n52n55n72n53n57n60n69n67n48n64n52n55n48n52n55"
 	},
 	{
-		"name": "through-the-enchanted-forrest-piano-level-6.mid",
+		"name": "THROUGH THE ENCHANTED FOREST.mid",
 		"notes": [64,48,52,55,64,48,52,55,67,48,52,55,48,52,55,60,48,52,55,60],
 		"short_midi": "n64n48n52n55n64n48n52n55n67n48n52n55n48n52n55n60n48n52n55n60"
 	},
 	{
-		"name": "we-three-kings-christmas-piano-level-6.mid",
+		"name": "TIME TO SAY GOODBYE.mid",
+		"notes": [43,59,62,31,55,59,74,55,59,62,59,55,55,59,79,59,55,59,55,59],
+		"short_midi": "n43n59n62n31n55n59n74n55n59n62n59n55n55n59n79n59n55n59n55n59"
+	},
+	{
+		"name": "TITANIC.mid",
+		"notes": [49,37,64,64,49,64,71,56,71,76,61,76,76,49,76,71,47,35,64,47],
+		"short_midi": "n49n37n64n64n49n64n71n56n71n76n61n76n76n49n76n71n47n35n64n47"
+	},
+	{
+		"name": "WE THREE KINGS.mid",
 		"notes": [71,52,55,69,59,67,52,55,64,59,66,47,67,51,66,57,64,52,55,59],
 		"short_midi": "n71n52n55n69n59n67n52n55n64n59n66n47n67n51n66n57n64n52n55n59"
 	},
 	{
-		"name": "yesterday-the-beatles-ballad-piano-level-6.mid",
+		"name": "WIEGENLIED (BRAHMS).mid",
+		"notes": [67,70,39,63,67,70,67,55,46,67,70,39,67,63,55,67,70,67,46,67],
+		"short_midi": "n67n70n39n63n67n70n67n55n46n67n70n39n67n63n55n67n70n67n46n67"
+	},
+	{
+		"name": "YESTERDAY (THE BEATLES).mid",
 		"notes": [41,41,41,41,67,41,65,65,41,38,40,69,71,40,73,45,74,76,77,45],
 		"short_midi": "n41n41n41n41n67n41n65n65n41n38n40n69n71n40n73n45n74n76n77n45"
 	},
 	{
-		"name": "you-light-up-my-life-joe-brooks-ballad-piano-level-6.mid",
-		"notes": [75,48,51,55,58,75,48,51,55,58,48,51,55,58,77,72,48,51,53,57],
-		"short_midi": "n75n48n51n55n58n75n48n51n55n58n48n51n55n58n77n72n48n51n53n57"
-	},
-	{
-		"name": "You_Decorated_My_Life_Kenny_Rodgers_Ballad_Piano_Level_6_Karaoke.mid",
+		"name": "YOU DECORATED MY LIFE (KENNY ROGERS).mid",
 		"notes": [74,43,50,59,50,43,62,67,71,72,42,63,66,71,47,63,69,48,62,66],
 		"short_midi": "n74n43n50n59n50n43n62n67n71n72n42n63n66n71n47n63n69n48n62n66"
 	},
 	{
-		"name": "zelda-theme-nintendo-piano-level-7.mid",
+		"name": "YOU LIGHT UP MY LIFE (JOE BROOKS).mid",
+		"notes": [75,48,51,55,58,75,48,51,55,58,48,51,55,58,77,72,48,51,53,57],
+		"short_midi": "n75n48n51n55n58n75n48n51n55n58n48n51n55n58n77n72n48n51n53n57"
+	},
+	{
+		"name": "ZELDA THEME.mid",
 		"notes": [70,65,70,70,72,74,75,77,77,77,78,80,82,82,82,82,80,78,80,78],
 		"short_midi": "n70n65n70n70n72n74n75n77n77n77n78n80n82n82n82n82n80n78n80n78"
 	}

@@ -12,7 +12,7 @@ class Listening(Frame):
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=15)
         label.grid(row=0, column=0, padx=10, pady=30)
 
-        final_string = "> Play a song:"
+        final_string = "> PLAY A SONG:"
         delta = controller.delta
         delay = 0
         for i in range(len(final_string) + 1):
@@ -24,7 +24,7 @@ class Listening(Frame):
         label2 = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=15)
         label2.grid(row=1, column=0, padx=10, pady=30)
 
-        final_string = "> Progress:"
+        final_string = "> PROGRESS:"
         for i in range(len(final_string) + 1):
             s = final_string[:i]
             update_text = lambda s=s: label2.config(text=s)
@@ -53,7 +53,7 @@ class Listening(Frame):
             self.status['text'] = "{}%".format(piano.get_progress())
             self.update()
         pianoThread.join()
-        self.status['text'] = "Done"
+        self.status['text'] = "DONE"
         self.update()
         #midi = piano.get_midi_list()
         midi = piano.get_midi()

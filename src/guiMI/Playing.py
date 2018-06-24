@@ -13,7 +13,7 @@ class Playing(Frame):
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=50)
         label.grid(row=0, column=0, padx=10, pady=30)
 
-        final_string = "> Playing Song:"
+        final_string = "> PLAYING SONG:"
         self.delta = controller.delta
         self.delay = 0
         for i in range(len(final_string) + 1):
@@ -37,7 +37,7 @@ class Playing(Frame):
             self.label2.after(self.delay, functools.update_wrapper( functools.partial(self.label2.config, text=s), self.label2.config))
             self.delay += self.delta
 
-        final_string = "> Reset"
+        final_string = "> RESET"
         for i in range(len(final_string) + 1):
             s = final_string[:i]
             self.button.after(self.delay, functools.update_wrapper( functools.partial(self.button.config, text=s), self.button.config))

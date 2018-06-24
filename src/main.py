@@ -7,13 +7,13 @@ import time
 from mido import MidiFile
 from midiSourceMI.piano import Piano
 
-from compare from comparatorMI import compare
+from comparatorMI import compare
 
 MIDI_DIR = "./../files/midi/"
-MIDI_FILE = "Alle_Meine_Entchen.mid"
+MIDI_FILE = "ALLE MEINE ENTCHEN.mid"
 MIDI_FILE2 = "for_elise_by_beethoven.mid"
-MIDI_FILE3 = "alle_meine_entchen--heilpaedagogik-info-de.mp3.mid"
-MIDI_FILE4 = "alle_meine_entchen--heilpaedagogik_modified.mid"
+MIDI_FILE3 = "ALLE MEINE ENTCHEN (HEILPAED).mid"
+MIDI_FILE4 = "ALLE MEINE ENTCHEN (HEILPAED MOD).mid"
 MIDI_FILE5 = "for_elise_by_beethoven_shortened.mid"
 
 def get_midi_as_text(file):

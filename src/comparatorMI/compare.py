@@ -126,8 +126,8 @@ def main():
 
     library = {}
     library[
-        "alle_meine_entchen--heilpaedagogik-info-de.mp3.mid: "] = "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
-    library["Alle_Meine_Entchen.mid: "] = "n48n50n52n53n55n55n57n57n57n57n55n57n57n57n57n55n53n53n53n53"
+        "ALLE MEINE ENTCHEN (HEILPAED).mid: "] = "n60n79n88n91n94n96n98n102n38n38n44n74n81n90n93n61n62n45n95n40"
+    library["ALLE MEINE ENTCHEN.mid: "] = "n48n50n52n53n55n55n57n57n57n57n55n57n57n57n57n55n53n53n53n53"
     library["for_elise_by_beethoven.mid: "] = "n76n75n76n75n76n71n74n72n69n45n52n57n60n64n69n71n40n52n56n64"
     library["for_elise_by_beethoven_shortened.mid: "] = "n76n75n76n75n76n71n74n72"
     library["StarWarsMainTheme.mid: "] = "n82n94n106n82n70n82n70n58n46n34n62n70n74n82n77n58n58n34n46n46"

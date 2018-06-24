@@ -11,7 +11,7 @@ class Choose(Frame):
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=controller.label_width)
         label.grid(row=rowc, column=0, padx=10, pady=30)
 
-        final_string = "> Which song did you mean?"
+        final_string = "> WHICH SONG DID YOU MEAN?"
         delta = controller.delta
         delay = 0
         for i in range(len(final_string) + 1):
@@ -52,7 +52,7 @@ class Choose(Frame):
         button = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.prompt, anchor="w", width=controller.label_width)
         button.grid(row=rowc, column=0, padx=10, pady=controller.pady)
         button.bind("<Button-1>", self.reset, controller)
-        final_string = "> Reset"
+        final_string = "> RESET"
         for i in range(len(final_string) + 1):
             s = final_string[:i]
             button.after(delay, functools.update_wrapper( functools.partial(button.config, text=s), button.config))

@@ -12,7 +12,7 @@ class Choose_input(Frame):
         label = Label(self, text="", font=controller.title_font, background=controller.bg, foreground=controller.fg, anchor="w", width=controller.label_width)
         label.grid(row=rowc, column=0, padx=10, pady=30)
 
-        final_string = "> Choose an input device:"
+        final_string = "> CHOOSE AN INPUT DEVICE:"
         delta = controller.delta
         delay = 0
         for i in range(len(final_string) + 1):

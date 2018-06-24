@@ -19,11 +19,6 @@ KEY_UP = 128
 
 class Piano(object):
 
-    progress = 0
-    isDone = False
-    midi = ""
-    midi_list = []
-
     def __init__(self, input_device_id):
         self.inp = pygame.midi.Input(input_device_id)
         self._reset_all()
@@ -44,6 +39,7 @@ class Piano(object):
         self.progress = 0
         self.isDone = False
         self.midi = ""
+        self.midi_list = []
         pygame.time.wait(100)
         while self.inp.poll():
             self.inp.read(1)
