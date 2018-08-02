@@ -2,7 +2,7 @@ import os
 import subprocess
 import time
 from mido import MidiFile
-from midiSourceMI.piano import Piano
+#from midiSourceMI.piano import Piano
 
 # MIDI_DIR = "../../files/midi/top1000/"
 MIDI_DIR = "../../files/new_midi/"
@@ -95,7 +95,7 @@ def main():
             output_file.write("\t\t\"notes\": [")
             for j in range(len(notes)):
                 note = str(notes[j])
-                if j is not len(notes):
+                if j is not len(notes)-1:
                     output_file.write(note + ",")
                 else:
                     output_file.write(note)
@@ -112,7 +112,7 @@ def main():
     # print(short_midis)
     print(error_files)
 
-    piano = Piano.without_devices()
+    #piano = Piano.without_devices()
     #for sm in short_midis.keys():
         #print("Playing \"" + sm + "\"")
         #piano.play_midi(short_midis[sm])
