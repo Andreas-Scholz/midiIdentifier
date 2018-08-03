@@ -78,7 +78,7 @@ def main():
     start_time = time.time()
 
     midi_files = __get_all_files_in_dir(MIDI_DIR)
-    output_file = open(OUT, "a+")
+    output_file = open(OUT, "w")
 
     short_midis = {}
     error_files = []
